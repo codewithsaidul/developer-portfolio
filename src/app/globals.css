@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #90caf9;
+  --color-secondary: #ffd54f; /*  #FFB300   */
+  --color-dark: #121212; /*  #FFB300   */
+  --color-card: #1e1e1e; /*  #FFB300   */
+  --color-textPrimary: #bdbdbd;
+  --color-textSecondary: #ffffff;
+  --color-success: #81c784;
+  --font-inter: var(--font-intar);
+  --font-dm-serif: var(--font-dm-serif-display);
+}
+
+@layer base {
+  body {
+    @apply bg-dark font-inter;
+  }
+}
