@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const getInter = Inter({
   variable: "--font-intar",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     "CodeWithSaidul",
     "Saidul Islam Rana"
   ],
-  authors: [{ name: "Saidul Islam Rana", url: "https://yourdomain.com" }],
+  authors: [{ name: "Saidul Islam Rana", url: "http://localhost:3000" }],
   creator: "CodeWithSaidul",
   openGraph: {
     title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
@@ -74,6 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${getInter.variable} ${dmSerif.variable} antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>
