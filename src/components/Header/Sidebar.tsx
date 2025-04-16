@@ -1,33 +1,16 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface SidebarProps {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
-  activeSection: string,
   sections: string[];
 }
 
-const Sidebar = ({ isOpen, setIsOpen, activeSection, sections }: SidebarProps) => {
+const Sidebar = ({ isOpen, setIsOpen, sections }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutSide = (event: MouseEvent) => {
-      const clikElement = event.target as Node;
-
-      const menuIcon = document.querySelector("[data-menu-icon]");
-
-      if (menuIcon?.contains(clikElement)) return;
-
-      if (sidebarRef.current && !sidebarRef.current.contains(clikElement)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutSide);
-  }, [setIsOpen]);
 
   return (
     <div
@@ -42,9 +25,9 @@ const Sidebar = ({ isOpen, setIsOpen, activeSection, sections }: SidebarProps) =
           <li
             key={section}
             className={twMerge(
-              "text-3xl  font-dm-serif duration-500 hover:text-primary hover::duration-500 capitalize",
-              activeSection === section ? "text-primary" : "text-textPrimary"
+              "text-3xl  font-dm-serif duration-500 hover:text-primary hover::duration-500 capitalize"
             )}
+            onClick={() => setIsOpen(!isOpen)}
           >
             <Link href={`#${section}`}>{section}</Link>
           </li>

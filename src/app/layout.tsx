@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
     description:
       "JavaScript web developer specializing in frontend with React & backend with Node.js. Explore my latest projects and skills.",
-    creator: "@codewithsaidul", // থাকলে দিবা
+    creator: "@codewithsaidul",
     images: ["http://localhost:3000/og-image.jpg"],
   },
 };
@@ -74,7 +74,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${getInter.variable} ${dmSerif.variable} antialiased`}>
+      <body className={`${getInter.variable} ${dmSerif.variable} relative antialiased`}>
+        {/* ================ bg blur ==================== */}
+       <div>
+          <div
+            className={
+              "absolute left-0  w-[300px] h-[400px] min-[830px]:w-[400px] bg-white opacity-10 blur-3xl lg:-top-[100px]"
+            }
+          />
+          <div
+            className={
+              "absolute right-0  w-[300px] h-[400px] bg-white opacity-10 blur-3xl top-60"
+            }
+          />
+       </div>
+       {/* ================ bg blur ==================== */}
         <Navbar />
         {children}
       </body>
