@@ -1,9 +1,9 @@
-
+import Hero from "@/sections/Hero";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-7xl font-dm-serif text-secondary">Welcome to my portfolio</h1>
-    </div>
+    <main className="px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+      <Hero />
+    </main>
   );
 }

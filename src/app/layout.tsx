@@ -1,7 +1,7 @@
+import Navbar from "@/components/Header/Navbar";
 import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 
 const getInter = Inter({
   variable: "--font-intar",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "Firebase",
     "JWT",
     "CodeWithSaidul",
-    "Saidul Islam Rana"
+    "Saidul Islam Rana",
   ],
   authors: [{ name: "Saidul Islam Rana", url: "http://localhost:3000" }],
   creator: "CodeWithSaidul",
