@@ -20,12 +20,12 @@ const Skills = () => {
         <div>
           <div
             className={
-              "absolute left-0  w-[500px] h-[600px] bg-white opacity-10 blur-3xl lg:-top-[100px]"
+              "absolute left-0 w-[70%] sm:w-[500px]  h-[600px] bg-white opacity-10 blur-3xl lg:-top-[100px]"
             }
           />
           <div
             className={
-              "absolute  right-0  w-[600px] h-[600px] bg-white opacity-10 blur-3xl bottom-0"
+              "absolute  right-0 w-[70%] sm:w-[500px]  h-[600px] bg-white opacity-10 blur-3xl bottom-0"
             }
           />
         </div>
@@ -34,11 +34,11 @@ const Skills = () => {
         {/* ===================== skills container ============================ */}
         <div className="mt-12 flex lg:flex-row justify-center flex-wrap gap-x-5 gap-y-10">
           {/* ======= frontend ========== */}
-          <div className="py-12 px-6 border-2 border-primary rounded-xl shadow-[0_4px_20px_rgba(255,255,255,0.05)] max-md:w-full max-[900px]:w-[80%] max-[1149px]:w-[70%] min-[1150px]:w-[48%]">
+          <div className="py-12 px-4 sm:px-6 border-2 border-primary rounded-xl shadow-[0_4px_20px_rgba(255,255,255,0.05)] max-md:w-full max-[900px]:w-[80%] max-[1149px]:w-[70%] min-[1150px]:w-[48%]">
             <h2 className="text-4xl text-textSecondary font-dm-serif text-center">
               FrontEnd
             </h2>
-            <div className="flex flex-row flex-wrap justify-center items-center gap-2">
+            <div className="flex flex-row flex-wrap justify-center items-center gap-0.5 sm:gap-2">
               {frontend.map((tech) => (
                 <div
                   key={tech.id}
@@ -51,10 +51,10 @@ const Skills = () => {
                         alt={tech.name}
                         width={100}
                         height={100}
-                        className="w-8 h-8 object-contain"
+                        className="w-6 h-6 min-sm:w-8 min-sm:h-8 object-contain"
                       />
                     </figure>
-                    <h3 className="text-white">{tech.name}</h3>
+                    <h3 className="text-white text-xs min-sm:text-sm min-md:text-base">{tech.name}</h3>
                   </div>
                 </div>
               ))}
@@ -62,7 +62,7 @@ const Skills = () => {
           </div>
 
           {/* ======= backend ========== */}
-          <div className="py-12 px-6 border-2 border-primary rounded-xl shadow-[0_4px_20px_rgba(255,255,255,0.05)] max-md:w-full max-[900px]:w-[80%] max-[1149px]:w-[70%] min-[1150px]:w-[48%]">
+          <div className="py-12 px-4 sm:px-6 border-2 border-primary rounded-xl shadow-[0_4px_20px_rgba(255,255,255,0.05)] max-md:w-full max-[900px]:w-[80%] max-[1149px]:w-[70%] min-[1150px]:w-[48%]">
             <h2 className="text-4xl text-textSecondary font-dm-serif text-center">
               BackEnd
             </h2>
@@ -79,10 +79,10 @@ const Skills = () => {
                         alt={tech.name}
                         width={100}
                         height={100}
-                        className="w-8 h-8 object-contain"
+                        className="w-6 h-6 min-sm:w-8 min-sm:h-8 object-contain"
                       />
                     </figure>
-                    <h3 className="text-white">{tech.name}</h3>
+                    <h3 className="text-white text-xs min-sm:text-sm min-md:text-base">{tech.name}</h3>
                   </div>
                 </div>
               ))}
@@ -90,7 +90,7 @@ const Skills = () => {
           </div>
 
           {/* ======= other ========== */}
-          <div className="py-12 px-6 border-2 border-primary rounded-xl shadow-[0_4px_20px_rgba(255,255,255,0.05)] max-md:w-full max-[900px]:w-[80%] max-[1149px]:w-[70%] min-[1150px]:w-1/2">
+          <div className="py-12 px-4 sm:px-6 border-2 border-primary rounded-xl shadow-[0_4px_20px_rgba(255,255,255,0.05)] max-md:w-full max-[900px]:w-[80%] max-[1149px]:w-[70%] min-[1150px]:w-1/2">
             <h2 className="text-4xl text-textSecondary font-dm-serif text-center">
               Other
             </h2>
@@ -100,17 +100,17 @@ const Skills = () => {
                   key={tech.id}
                   className="border-2 border-dark bg-card py-3 px-5 rounded-full mt-5"
                 >
-                  <div className="flex items-center justify-center gap-2">
+                  <div className="flex items-center justify-center gap-3">
                     <figure>
                       <Image
                         src={tech.icon}
                         alt={tech.name}
                         width={100}
                         height={100}
-                        className="w-8 h-8 object-contain"
+                        className="w-6 h-6 min-sm:w-8 min-sm:h-8 object-contain"
                       />
                     </figure>
-                    <h3 className="text-white">{tech.name}</h3>
+                    <h3 className="text-white text-xs min-sm:text-sm min-md:text-base">{tech.name}</h3>
                   </div>
                 </div>
               ))}
