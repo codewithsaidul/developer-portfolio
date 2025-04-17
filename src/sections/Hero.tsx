@@ -5,7 +5,10 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
   return (
-    <section id="about" className="w-full min-h-screen flex justify-center items-center">
+    <section
+      id="about"
+      className="w-full min-h-screen flex justify-center items-center"
+    >
       <motion.div
         className="mt-20"
         initial={{ opacity: 0, y: 50 }}
@@ -50,10 +53,10 @@ const Hero = () => {
 
           <div className="mt-5 flex justify-center">
             <Link
-              href="public/frontend-developer-resume-of-saidul.pdf"
+              href="/frontend-developer-resume-of-saidul.pdf"
               download
               target="_blank"
-              className="text-2xl font-dm-serif border border-transparent bg-gradient-to-r from-[#90caf9] to-[#4a90e2] text-dark py-4 px-8 rounded-3xl max-[450px]:w-[250px] max-[767px]:w-[400px] min-[768px]:w-[350px]" 
+              className="text-2xl font-dm-serif bg-gradient-to-r from-[#90caf9] to-[#4a90e2] text-textSecondary text-center py-4 px-8 rounded-3xl max-[450px]:w-[250px] max-[767px]:w-[400px] min-[768px]:w-[350px] border-2 border-primary duration-1000 hover:bg-none hover:duration-1000 transition-all"
             >
               Check Resume
             </Link>
