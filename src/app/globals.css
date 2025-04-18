@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+
+
+
 @theme {
   --color-primary: #90caf9;
   --color-secondary: #ffd54f; /*  #FFB300   */
@@ -8,6 +11,7 @@
   --color-textPrimary: #bdbdbd;
   --color-textSecondary: #ffffff;
   --color-success: #81c784;
+  --shadow-5xl: 0 0px 8px rgba(255,255,255,0.2);
   --font-inter: var(--font-intar);
   --font-dm-serif: var(--font-dm-serif-display);
 }
@@ -20,6 +24,17 @@
 
   body {
     @apply bg-dark font-inter;
+  } 
+
+  ::-webkit-scrollbar {
+    @apply hidden
   }
 
 }
+
+@layer utilities {
+  .body-lock {
+    @apply overflow-hidden
+  }
+}
+

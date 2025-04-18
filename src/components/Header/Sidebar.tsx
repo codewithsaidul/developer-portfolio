@@ -1,13 +1,10 @@
 "use client";
+import { SidebarProps } from "@/types/types";
 import Link from "next/link";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface SidebarProps {
-  isOpen: boolean;
-  setIsOpen: (value: boolean) => void;
-  sections: string[];
-}
+
 
 const Sidebar = ({ isOpen, setIsOpen, sections }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);

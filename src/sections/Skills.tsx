@@ -1,19 +1,21 @@
+import SectionHeading from "@/components/SectionHeading/SectionHeading";
+import SkillCard from "@/components/Skills/TechIcon";
 import Image from "next/image";
-import { backend, frontend, others } from "../../public/constants/constants";
+import { backend, frontend, others } from "../constants/constants";
 
 const Skills = () => {
   return (
     <section id="skills" className="w-full min-h-[calc(100vh-100px)] mt-20">
-      <div className="text-center">
-        <h2 className="text-5xl text-white font-dm-serif">Skills</h2>
-        <p className="text-textPrimary w-full md:w-[600px] lg:w-[750px] xl:w-[850px] mx-auto mt-3">
-          I&apos;ve been involved in web development for almost 4 years —
-          gradually transitioning from basic static sites to full-stack modern
-          web applications. My recent focus has been on deepening my skills and
-          exploring more advanced technologies to build scalable, real-world
-          projects.
-        </p>
-      </div>
+      {/* ========== Section Heading =================== */}
+      <SectionHeading
+        title="Skills"
+        desc={`I've been involved in web development for almost 4 years —
+        gradually transitioning from basic static sites to full-stack modern web
+        applications. My recent focus has been on deepening my skills and
+        exploring more advanced technologies to build scalable, real-world
+        projects.`}
+      />
+      {/* ========== Section Heading =================== */}
 
       <div className="relative">
         {/* =================== Bg Blur ===================== */}
@@ -40,23 +42,7 @@ const Skills = () => {
             </h2>
             <div className="flex flex-row flex-wrap justify-center items-center gap-0.5 sm:gap-2">
               {frontend.map((tech) => (
-                <div
-                  key={tech.id}
-                  className="border-2 border-dark bg-card py-3 px-5 rounded-full mt-5"
-                >
-                  <div className="flex items-center justify-center gap-3">
-                    <figure>
-                      <Image
-                        src={tech.icon}
-                        alt={tech.name}
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 min-sm:w-8 min-sm:h-8 object-contain"
-                      />
-                    </figure>
-                    <h3 className="text-white text-xs min-sm:text-sm min-md:text-base">{tech.name}</h3>
-                  </div>
-                </div>
+                <SkillCard key={tech.id} name={tech.name} icon={tech.icon} />
               ))}
             </div>
           </div>
@@ -68,23 +54,7 @@ const Skills = () => {
             </h2>
             <div className="flex flex-row flex-wrap justify-center items-center gap-2">
               {backend.map((tech) => (
-                <div
-                  key={tech.id}
-                  className="border-2 border-dark bg-card py-3 px-5 rounded-full mt-5"
-                >
-                  <div className="flex items-center justify-center gap-3">
-                    <figure>
-                      <Image
-                        src={tech.icon}
-                        alt={tech.name}
-                        width={100}
-                        height={100}
-                        className="w-6 h-6 min-sm:w-8 min-sm:h-8 object-contain"
-                      />
-                    </figure>
-                    <h3 className="text-white text-xs min-sm:text-sm min-md:text-base">{tech.name}</h3>
-                  </div>
-                </div>
+                <SkillCard key={tech.id} name={tech.name} icon={tech.icon} />
               ))}
             </div>
           </div>
@@ -110,7 +80,9 @@ const Skills = () => {
                         className="w-6 h-6 min-sm:w-8 min-sm:h-8 object-contain"
                       />
                     </figure>
-                    <h3 className="text-white text-xs min-sm:text-sm min-md:text-base">{tech.name}</h3>
+                    <h3 className="text-white text-xs min-sm:text-sm min-md:text-base">
+                      {tech.name}
+                    </h3>
                   </div>
                 </div>
               ))}
