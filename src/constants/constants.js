@@ -1,3 +1,4 @@
+import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 
 
@@ -262,4 +263,37 @@ export const others = [
         icon: "/icon/netlify.svg"
     } 
 ]
+
+export const sections = ["about", "skills", "projects", "education", "contact"];
+
+export const socials = [
+    {
+      id: 1,
+      icon: <FaFacebookF size={24} color="#fff" />,
+      name: "Facebook",
+      link: "https://www.facebook.com/codewithsaidul",
+    },
+    {
+      id: 2,
+      icon: <FaGithub size={24} color="#fff" />,
+      name: "GitHub",
+      link: "https://github.com/codewithsaidul",
+      size: 32
+    },
+    {
+      id: 3,
+      icon: <FaLinkedinIn size={24} color="#fff" />,
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/codewithsaidul",
+      size: 32
+    },
+    {
+      id: 4,
+      icon: <FaInstagram size={24} color="#fff" />,
+      name: "Instagram",
+      link: "https://www.instagram.com/codewithsaidul",
+      size: 32
+    }
+  ];
+  
 

@@ -5,8 +5,9 @@ import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Logo from "./Logo";
 import MenuIcon from "./MenuIcon";
+import { sections } from "@/constants/constants";
 
-const sections = ["about", "skills", "projects", "education", "contact"];
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

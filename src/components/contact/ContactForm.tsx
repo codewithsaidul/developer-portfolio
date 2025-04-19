@@ -1,10 +1,10 @@
 "use client";
-import { useForm } from "react-hook-form";
-import { Form } from "../ui/form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import Button from "../ui/Custom/Button";
+import { Form } from "../ui/form";
 import FormField from "./FormField";
-import Button from "../ui/Button";
 
 const contactFormSchema = () => {
   return z.object({
@@ -52,8 +52,6 @@ const ContactForm = () => {
               type="email"
             />
           </div>
-
-
           <div className="col-span-12">
             <FormField
               control={form.control}
@@ -72,9 +70,10 @@ const ContactForm = () => {
               textarea // <- optional prop to toggle textarea mode
             />
           </div>
-
           {/* ========== btn ============= */}
-          <div className="col-span-12"><Button title="Send Message" type="filed" /></div>
+          <div className="col-span-12">
+            <Button title="Send Message" type="filed" />
+          </div>
         </form>
       </Form>
     </div>

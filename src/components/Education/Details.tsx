@@ -1,4 +1,4 @@
-import LiIcon from "@/components/ui/LiIcon";
+import LiIcon from "@/components/ui/Custom/LiIcon";
 import { DetailsProps } from "@/types/types";
 import { motion } from "framer-motion";
 import { useRef } from "react";

@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface ProjectTech {
   id?: number;
   name: string;
@@ -53,4 +55,16 @@ export interface DetailsProps {
   time: string;
   place: string;
   info: string;
+}
+
+
+export interface SocialsIcon {
+  id?: number;
+  name: string;
+  link: string;
+  icon: React.ReactNode; 
+}
+
+export interface SocialIconProps {
+  social: SocialsIcon
 }

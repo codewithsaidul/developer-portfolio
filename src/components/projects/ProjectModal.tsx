@@ -1,17 +1,16 @@
 import { ProjectModelProps } from "@/types/types";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
-import Button from "../ui/Button";
+import Button from "../ui/Custom/Button";
 import Technology from "./Technology";
 
 const ProjectModal = ({ project, isOpen, setIsOpen }: ProjectModelProps) => {
   const { title, thumbnail, description, techs, liveLink, codeLink } = project;
 
-
   const handleCloseModal = () => {
-    setIsOpen(!isOpen)
-    document.body.classList.remove("body-lock")
-  }
+    setIsOpen(!isOpen);
+    document.body.classList.remove("body-lock");
+  };
 
   return (
     <div className="w-full bg-dark shadow-5xl rounded-xl duration-700 mx-auto relative">
@@ -41,13 +40,16 @@ const ProjectModal = ({ project, isOpen, setIsOpen }: ProjectModelProps) => {
           </div>
 
           <div className="flex max-[399px]:flex-col gap-2 mt-8 overflow-hidden truncate">
-          <Button title="View Code" link={codeLink} type="outline" />
-          <Button title="Live Demo" link={liveLink} type="filed" />
-        </div>
+            <Button title="View Code" link={codeLink} type="outline" />
+            <Button title="Live Demo" link={liveLink} type="filed" />
+          </div>
         </div>
       </div>
 
-      <button onClick={handleCloseModal} className="absolute top-3 right-3 cursor-pointer">
+      <button
+        onClick={handleCloseModal}
+        className="absolute top-3 right-3 cursor-pointer"
+      >
         <IoClose size={32} color="#fff" />
       </button>
     </div>
