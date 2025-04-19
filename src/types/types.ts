@@ -1,5 +1,5 @@
 export interface ProjectTech {
-  id: number;
+  id?: number;
   name: string;
 }
 
@@ -37,6 +37,8 @@ export interface ProjectModelProps {
 
 export interface ProjectCardProps {
   project: Project;
+  index: number;
+  setProjectIndex: (value: number) => void;
   setIsOpen: (value: boolean) => void
 }
 

@@ -4,15 +4,15 @@
 export const projects = [
     {
         id: 1,
-        title: "Ai Mock InterView Platform",
+        title: "AI Mock InterView Platform",
         thumbnail: "/projects/project1.webp",
         codeLink: "https://github.com/codewithsaidul/cws_mock_interview_platform",
         liveLink: "https://prepwise-sigma.vercel.app/",
-        description: "AI-powered mock interview platform designed to simulate real-world tech interviews. Features AI-generated questions, real-time feedback, and performance tracking. Helps users prepare for coding, behavioral, and system design interviews.",
+        description: "PrepWise is an innovative platform that helps users prepare for interviews by offering mock interview sessions with personalized questions. The website provides users with the ability to generate interview questions based on their preferences, take mock interviews, and receive feedback, all through voice calls. Whether preparing for coding, behavioral, or system design interviews, PrepWise tailors each session to meet the specific needs of the user. By simulating real-world interview environments, the platform helps users build confidence, improve their responses, and get a realistic idea of what to expect during their actual interviews. The voice call feature ensures a more interactive and authentic experience. With detailed performance tracking and AI-generated feedback, PrepWise empowers users to identify strengths and areas for improvement, ensuring they are better prepared for success in their next interview.",
         techs: [
             {
                 id: 1,
-                name: 'shadCN ui',
+                name: 'shadcn UI',
             },
             {
                 id: 2,
@@ -50,7 +50,7 @@ export const projects = [
         thumbnail: "/projects/project2.webp",
         codeLink: "https://github.com/codewithsaidul/GizmoMart-Client",
         liveLink: "https://gizmo-mart-client.vercel.app",
-        description: "Gizmo Mart is a user-centric e-commerce platform designed for smooth and efficient gadget shopping. It offers intuitive product browsing, secure checkout, and order tracking to enhance the online shopping experience for both users and store admins.",
+        description: "Gizmo Mart is a user-centric e-commerce platform designed for smooth and efficient gadget shopping. It offers intuitive product browsing, secure checkout, and order tracking to enhance the online shopping experience for both users and store admins. The platform allows users to easily search, compare, and purchase gadgets from a wide range of categories. It also ensures a seamless experience with a responsive interface and fast loading times. Store admins benefit from an intuitive backend for managing inventory, processing orders, and analyzing sales data. Security is a top priority, with encrypted payment gateways and user data protection measures in place. Gizmo Mart is constantly evolving, incorporating user feedback to improve its features and functionality, ensuring that it remains a reliable and efficient tool for both shoppers and business owners alike. Whether you're buying the latest tech gadgets or managing your online store, Gizmo Mart is the ideal platform.",
         techs: [
             {
                 id: 1,
@@ -92,7 +92,7 @@ export const projects = [
         thumbnail: "/projects/project3.webp",
         codeLink: "https://github.com/codewithsaidul/Naxos-NFT",
         liveLink: "https://naxos-nft.vercel.app",
-        description: "Naxos NFT is a digital marketplace built to simplify NFT discovery, trading, and collection. It offers a sleek user experience for browsing, minting, and managing NFTs, empowering creators and collectors in the growing world of digital assets.",
+        description: "Naxos NFT is a digital marketplace built to simplify NFT discovery, trading, and collection. It offers a sleek user experience for browsing, minting, and managing NFTs, empowering creators and collectors in the growing world of digital assets. The platform makes it easy for users to discover unique digital art and collectibles, while creators can effortlessly mint and showcase their work. With a focus on simplicity and user-centric design, Naxos NFT ensures a seamless process for buying, selling, and managing NFTs. Through innovative features and a streamlined interface, Naxos NFT fosters a vibrant community where artists and collectors can connect and interact. Whether you're a first-time buyer, a seasoned collector, or a creator looking to showcase your work, Naxos NFT provides the tools and support needed to navigate the exciting world of non-fungible tokens and digital ownership with ease.",
         techs: [
             {
                 id: 1,
@@ -122,7 +122,7 @@ export const projects = [
         thumbnail: "/projects/project4.webp",
         codeLink: "https://github.com/codewithsaidul/AnimateX",
         liveLink: "https://animate-x.vercel.app",
-        description: "Animate-X is a creative animation platform designed to make motion design simple and accessible. It allows users to create, customize, and preview web animations in real time, streamlining the workflow for developers and designers alike.",
+        description: "Animate-X is a creative animation platform designed to make motion design simple and accessible. It allows users to create, customize, and preview web animations in real time, streamlining the workflow for developers and designers alike. By offering an intuitive interface, Animate-X helps users bring their design ideas to life with ease, whether for websites, mobile apps, or other digital platforms. The platform provides a wide range of customizable animation templates and tools that make the animation process faster and more efficient. It also supports real-time previews, allowing users to instantly see their work in action and make necessary adjustments. Animate-X is ideal for both beginners and experienced professionals, offering features that cater to all skill levels. With its user-friendly approach and robust capabilities, Animate-X simplifies the complex process of motion design, enabling creatives to focus on the art of animation without being bogged down by technical barriers.",
         techs: [
             {
                 id: 1,

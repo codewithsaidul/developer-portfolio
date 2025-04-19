@@ -8,7 +8,10 @@ import { useRef, useState } from "react";
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [projectIndex, setProjectIndex] = useState(0)
   const modalRef = useRef(null);
+
+
   const { scrollYProgress } = useScroll({
     target: modalRef,
     offset: ["start start", "end end"],
@@ -28,12 +31,14 @@ const Projects = () => {
 
       {/* ==================== Projects Container ==================== */}
       <div className="mt-20 relative">
-        <div className="grid grid-cols-1 min-[790px]:grid-cols-2 lg:grid-cols-3  min-[790px]:gap-6 lg:gap-8 gap-y-12">
-          {projects.map((project) => (
+        <div className="grid grid-cols-1 min-[790px]:grid-cols-2 min-[1090px]:grid-cols-3  min-[790px]:gap-x-6 gap-y-16">
+          {projects.map((project, index) => (
             <ProjectCard
               key={project.id}
+              index={index}
               project={project}
               setIsOpen={setIsOpen}
+              setProjectIndex={setProjectIndex}
             />
           ))}
         </div>
@@ -42,7 +47,7 @@ const Projects = () => {
           {isOpen && (
             <motion.div
               key="modal-wrapper"
-              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm overflow-y-auto"
+              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs overflow-y-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -58,10 +63,10 @@ const Projects = () => {
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  className="h-auto max-h-[80vh] w-full sm:w-[80%] mx-auto max-sm:px-4"
+                  className="h-auto max-h-[80vh] w-full sm:w-[50%] mx-auto max-sm:px-4"
                 >
                   <ProjectModal
-                    project={projects[0]}
+                    project={projects[projectIndex]}
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}
                   />

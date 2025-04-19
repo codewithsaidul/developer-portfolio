@@ -2,6 +2,7 @@ import { ProjectModelProps } from "@/types/types";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
 import Button from "../ui/Button";
+import Technology from "./Technology";
 
 const ProjectModal = ({ project, isOpen, setIsOpen }: ProjectModelProps) => {
   const { title, thumbnail, description, techs, liveLink, codeLink } = project;
@@ -16,7 +17,7 @@ const ProjectModal = ({ project, isOpen, setIsOpen }: ProjectModelProps) => {
     <div className="w-full bg-dark shadow-5xl rounded-xl duration-700 mx-auto relative">
       <div className="py-10 px-6">
         <div className="mt-8">
-          <figure className="bg-card p-2 rounded-xl w-full h-fit">
+          <figure className="bg-card p-4 rounded-xl w-full h-fit">
             <Image
               src={thumbnail}
               alt={title}
@@ -28,14 +29,7 @@ const ProjectModal = ({ project, isOpen, setIsOpen }: ProjectModelProps) => {
 
           <div className="flex items-center gap-1.5 flex-wrap my-10">
             {techs.map((tech) => (
-              <div
-                key={tech.id}
-                className=" bg-card shadow-[0_0px_4px_rgba(255,255,255,0.1)] py-2 px-4 rounded-full"
-              >
-                <h3 className="text-textSecondary text-sm capitalize">
-                  {tech.name}
-                </h3>
-              </div>
+              <Technology key={tech.id} name={tech.name} />
             ))}
           </div>
 

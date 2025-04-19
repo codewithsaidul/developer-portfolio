@@ -2,12 +2,23 @@
 import { ProjectCardProps } from "@/types/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Technology from "./Technology";
 
-const ProjectCard = ({ project, setIsOpen }: ProjectCardProps) => {
+const ProjectCard = ({
+  index,
+  project,
+  setIsOpen,
+  setProjectIndex,
+}: ProjectCardProps) => {
   const { title, thumbnail, description, techs } = project;
+
+  const MAX_VISIBLE_TAGS = 4;
+  const visibleTechs = techs.slice(0, MAX_VISIBLE_TAGS);
+  const remainingCount = techs.length - MAX_VISIBLE_TAGS;
 
   const handleModal = () => {
     setIsOpen(true);
+    setProjectIndex(index);
     document.body.classList.add("body-lock");
   };
 
@@ -32,15 +43,18 @@ const ProjectCard = ({ project, setIsOpen }: ProjectCardProps) => {
         </figure>
 
         {/* ============== Project Used Technology ================= */}
-        <div className="flex items-center gap-1.5 flex-wrap my-10">
-          {techs.map((tech) => (
-            <div
-              key={tech.id}
-              className=" bg-primary/90 shadow-[0_0px_4px_rgba(255,255,255,0.1)] py-2 px-4 rounded-full"
-            >
-              <h3 className="text-white text-sm capitalize">{tech.name}</h3>
-            </div>
+        <div className="flex items-center gap-1.5 flex-wrap  min-h-[52px] my-10">
+          {visibleTechs.map((tech) => (
+            <Technology key={tech.id} name={tech.name} />
           ))}
+
+          {remainingCount > 0 && (
+            <div className="bg-dark py-2 px-4 rounded-full shadow-5xl">
+              <h3 className="text-white text-sm capitalize">
+                +{remainingCount} more
+              </h3>
+            </div>
+          )}
         </div>
 
         {/* ==================== Project Content ========================= */}
@@ -48,7 +62,7 @@ const ProjectCard = ({ project, setIsOpen }: ProjectCardProps) => {
           <h2 className="text-3xl font-dm-serif text-textSecondary mb-4 overflow-hidden truncate">
             {title}
           </h2>
-          <p className="text-base text-textPrimary">{description}</p>
+          <p className="text-base text-textPrimary line-clamp-3">{description}</p>
         </div>
 
         {/* ========================= Project BTN ====================== */}
