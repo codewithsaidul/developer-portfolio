@@ -5,7 +5,7 @@ import { backend, frontend, others } from "../constants/constants";
 
 const Skills = () => {
   return (
-    <section id="skills" className="w-full min-h-[calc(100vh-100px)] mt-20">
+    <section id="skills" className="w-full min-h-[calc(100vh-100px)] my-64">
       {/* ========== Section Heading =================== */}
       <SectionHeading
         title="Skills"

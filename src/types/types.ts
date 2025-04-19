@@ -30,13 +30,14 @@ export interface SidebarProps {
 }
 
 export interface ProjectModelProps {
+  project: Project;
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
-  sections: string[];
 }
 
 export interface ProjectCardProps {
   project: Project;
+  setIsOpen: (value: boolean) => void
 }
 
 export interface ButtonProps {

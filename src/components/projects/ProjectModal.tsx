@@ -1,23 +1,28 @@
-import { Project } from "@/types/types";
+import { ProjectModelProps } from "@/types/types";
 import Image from "next/image";
+import { IoClose } from "react-icons/io5";
+import Button from "../ui/Button";
 
-interface ProjectCardProps {
-  project: Project;
-}
+const ProjectModal = ({ project, isOpen, setIsOpen }: ProjectModelProps) => {
+  const { title, thumbnail, description, techs, liveLink, codeLink } = project;
 
-const ProjectModal = ({ project }: ProjectCardProps) => {
-  const { title, thumbnail, description, techs } = project;
+
+  const handleCloseModal = () => {
+    setIsOpen(!isOpen)
+    document.body.classList.remove("body-lock")
+  }
+
   return (
-    <div className="w-full bg-dark shadow-5xl rounded-xl  mx-auto relative">
+    <div className="w-full bg-dark shadow-5xl rounded-xl duration-700 mx-auto relative">
       <div className="py-10 px-6">
-        <div>
-          <figure className="bg-card p-2 rounded-xl w-full max-sm:h-[300px] h-[400px]">
+        <div className="mt-8">
+          <figure className="bg-card p-2 rounded-xl w-full h-fit">
             <Image
               src={thumbnail}
               alt={title}
-              width={600}
-              height={600}
-              className="w-full h-full object-cover rounded-xl"
+              width={1280}
+              height={1280}
+              className="w-full h-fit object-cover rounded-xl"
             />
           </figure>
 
@@ -27,7 +32,9 @@ const ProjectModal = ({ project }: ProjectCardProps) => {
                 key={tech.id}
                 className=" bg-card shadow-[0_0px_4px_rgba(255,255,255,0.1)] py-2 px-4 rounded-full"
               >
-                <h3 className="text-textSecondary text-sm capitalize">{tech.name}</h3>
+                <h3 className="text-textSecondary text-sm capitalize">
+                  {tech.name}
+                </h3>
               </div>
             ))}
           </div>
@@ -38,8 +45,17 @@ const ProjectModal = ({ project }: ProjectCardProps) => {
             </h2>
             <p className="text-lg text-textPrimary">{description}</p>
           </div>
+
+          <div className="flex max-[399px]:flex-col gap-2 mt-8 overflow-hidden truncate">
+          <Button title="View Code" link={codeLink} type="outline" />
+          <Button title="Live Demo" link={liveLink} type="filed" />
+        </div>
         </div>
       </div>
+
+      <button onClick={handleCloseModal} className="absolute top-3 right-3 cursor-pointer">
+        <IoClose size={32} color="#fff" />
+      </button>
     </div>
   );
 };

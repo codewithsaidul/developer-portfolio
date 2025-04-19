@@ -1,11 +1,15 @@
 "use client";
 import { ProjectCardProps } from "@/types/types";
-import Image from "next/image";
-import Button from "../ui/Button";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { title, thumbnail, description, techs, liveLink, codeLink } = project;
+const ProjectCard = ({ project, setIsOpen }: ProjectCardProps) => {
+  const { title, thumbnail, description, techs } = project;
+
+  const handleModal = () => {
+    setIsOpen(true);
+    document.body.classList.add("body-lock");
+  };
 
   return (
     <motion.div
@@ -13,6 +17,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="bg-card shadow-5xl py-8 px-4 rounded-xl cursor-pointer transform transition-all duration-500 hover:scale-y-105 hover:duration-500"
+      onClick={handleModal}
     >
       <div>
         {/* ============== Project Image =============== */}
@@ -47,10 +52,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
 
         {/* ========================= Project BTN ====================== */}
-        <div className="flex max-[399px]:flex-col gap-2 mt-8 overflow-hidden truncate">
-          <Button title="View Code" link={codeLink} type="outline" />
-          <Button title="Live Demo" link={liveLink} type="filed" />
-        </div>
       </div>
     </motion.div>
   );
