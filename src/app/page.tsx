@@ -1,3 +1,4 @@
+import Contact from "@/sections/Contact";
 import Education from "@/sections/Education";
 import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
@@ -10,6 +11,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Education />
+      <Contact />
     </main>
   );
 }

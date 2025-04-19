@@ -20,7 +20,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full relative min-h-[calc(100vh-100px)] mt-20"
+      className="w-full relative min-h-[calc(100vh-100px)]"
     >
       {/* ========== Section Heading =================== */}
       <SectionHeading

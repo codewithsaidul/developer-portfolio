@@ -39,11 +39,18 @@ export interface ProjectCardProps {
   project: Project;
   index: number;
   setProjectIndex: (value: number) => void;
-  setIsOpen: (value: boolean) => void
+  setIsOpen: (value: boolean) => void;
 }
 
 export interface ButtonProps {
   title: string;
-  link: string;
+  link?: string;
   type: "filed" | "outline";
+}
+
+export interface DetailsProps {
+  type: string;
+  time: string;
+  place: string;
+  info: string;
 }
