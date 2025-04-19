@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
+import  { Toaster } from 'react-hot-toast';
+
+
+
 
 const getInter = Inter({
   variable: "--font-intar",
@@ -93,6 +97,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster position="top-center" />
       </body>
     </html>
   );

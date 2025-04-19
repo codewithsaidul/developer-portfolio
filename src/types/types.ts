@@ -48,6 +48,7 @@ export interface ButtonProps {
   title: string;
   link?: string;
   type: "filed" | "outline";
+  loading?: boolean;
 }
 
 export interface DetailsProps {

@@ -5,7 +5,7 @@ import SocialIcon from "./SocialIcon";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-64 py-20 bg-card h-fit">
+    <footer className="relative mt-64 py-20 px-4 bg-card h-fit">
       {/* ===== SVG Wave Background ===== */}
       <div className="absolute max-[370px]:-top-12 -top-20 min-[550px]:-top-28 sm:-top-52 min-lg:-top-80 xl:-top-96 left-0 w-full overflow-hidden -z-10 pointer-events-none">
         <svg
