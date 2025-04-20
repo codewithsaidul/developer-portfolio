@@ -132,7 +132,7 @@
   }
 
   .input {
-    @apply text-xl text-textPrimary
+    @apply text-xl text-textPrimary border border-textPrimary focus:border-textPrimary outline-none
   }
 }
 

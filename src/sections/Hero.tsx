@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
@@ -52,14 +51,14 @@ const Hero = () => {
           </p>
 
           <div className="mt-5 flex justify-center">
-            <Link
+            <a
               href="/frontend-developer-resume-of-saidul.pdf"
               download
               target="_blank"
               className="text-2xl font-dm-serif bg-gradient-to-r from-[#90caf9] to-[#4a90e2] text-textSecondary text-center py-4 px-8 rounded-3xl max-[450px]:w-[250px] max-[767px]:w-[400px] min-[768px]:w-[350px] border-2 border-primary duration-1000 hover:bg-none hover:duration-1000 transition-all"
             >
               Check Resume
-            </Link>
+            </a>
           </div>
         </div>
       </motion.div>
