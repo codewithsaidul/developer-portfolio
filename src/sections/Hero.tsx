@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 import { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 // Register GSAP plugins
@@ -23,6 +24,8 @@ export default function Hero() {
   const shape1Ref = useRef<HTMLDivElement>(null);
   const shape2Ref = useRef<HTMLDivElement>(null);
   const shape3Ref = useRef<HTMLDivElement>(null);
+  const ctaBtnRef = useRef<HTMLDivElement>(null);
+  const arrowBtnRef = useRef<HTMLButtonElement>(null);
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
@@ -38,30 +41,42 @@ export default function Hero() {
         tl.fromTo(
           titleRef1.current,
           { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 1.3, ease: "power3.out" }
+          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
         )
           .fromTo(
             titleRef2.current,
             { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" },
+            { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
             "-=0.5"
           )
           .fromTo(
             titleRef3.current,
             { opacity: 0, y: 40 },
-            { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+            { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
             "-=0.5"
           )
           .fromTo(
             descRef.current,
             { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+            { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
             "-=0.5"
           )
           .fromTo(
             ctaRef.current,
             { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+            { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+            "-=0.3"
+          )
+          .fromTo(
+            ctaBtnRef.current,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" },
+            "-=0.3"
+          )
+          .fromTo(
+            arrowBtnRef.current,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.2, ease: "power3.out" },
             "-=0.3"
           );
 
@@ -157,12 +172,12 @@ export default function Hero() {
           <div className="max-w-4xl mx-auto">
             {/* Main Title */}
             <div>
-              <p
+              <span
                 ref={titleRef1}
                 className="text-xl font-serif font-bold text-foreground mb-6 leading-tight"
               >
                 Hi, I&apos;m{" "}
-              </p>
+              </span>
               <h1
                 ref={titleRef2}
                 className="text-4xl sm:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
@@ -231,33 +246,34 @@ export default function Hero() {
             </div>
   
             {/* Social Links */}
-            <div className="flex items-center justify-center space-x-6 mb-12">
-              <a
-                href="https://github.com"
+            <div ref={ctaBtnRef} className="flex items-center justify-center space-x-6 mb-12">
+              <Link
+                href="https://github.com/codewithsaidul"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 <Github className="h-6 w-6" />
-              </a>
-              <a
-                href="https://linkedin.com"
+              </Link>
+              <Link
+                href="https://linkedin.com/in/codewithsaidul"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 <Linkedin className="h-6 w-6" />
-              </a>
-              <a
-                href="mailto:contact@saidulrana.dev"
+              </Link>
+              <Link
+                href="mailto:codewithsaidul@gmail.com"
                 className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 <Mail className="h-6 w-6" />
-              </a>
+              </Link>
             </div>
   
             {/* Scroll Indicator */}
             <button
+            ref={arrowBtnRef}
               onClick={scrollToAbout}
               className="animate-bounce p-2 rounded-full hover:bg-muted/50 transition-colors duration-300"
               aria-label="Scroll to about section"

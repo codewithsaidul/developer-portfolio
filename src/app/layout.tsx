@@ -5,6 +5,8 @@ import Footer from "@/components/Footer/Footer";
 import  { Toaster } from 'react-hot-toast';
 import "./global.css"
 import { ThemeProvider } from "@/Provider/ThemeProvider";
+import AnimationProvider from "@/Provider/AnimationProvider";
+import SmoothScroll from "@/Provider/SmoothScrollProvider";
 
 
 
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
     description:
       "Experienced JavaScript web developer focusing on React, Next.js, Tailwind, Node.js & MongoDB. Passionate about building responsive, high-performance web apps.",
-    url: "https://yourdomain.com",
+    url: "https://codewithsaidul.vercel.app",
     siteName: "CodeWithSaidul Portfolio",
     images: [
       {
@@ -81,25 +83,15 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className={`${getInter.variable} ${dmSerif.variable} relative antialiased`}>
-        <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
-          {/* ================ bg blur ==================== */}
-         <div>
-            <div
-              className={
-                "absolute left-0  w-[300px] h-[400px] min-[830px]:w-[400px] bg-white opacity-10 blur-3xl lg:-top-[100px]"
-              }
-            />
-            <div
-              className={
-                "absolute right-0  w-[300px] h-[400px] bg-white opacity-10 blur-3xl top-60"
-              }
-            />
-         </div>
-         {/* ================ bg blur ==================== */}
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster position="top-center" />
+        <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
+          <AnimationProvider>
+            <SmoothScroll>
+              <Navbar />
+              {children}
+              <Footer />
+              <Toaster position="top-center" />
+            </SmoothScroll>
+          </AnimationProvider>
         </ThemeProvider>
       </body>
     </html>
