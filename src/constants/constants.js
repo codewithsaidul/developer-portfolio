@@ -1,5 +1,25 @@
 import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { Code, Lightbulb, Users, Zap } from "lucide-react";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiSass,
+  SiHtml5,
+  SiCss3,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiGit,
+  SiGithub,
+  SiFigma,
+  SiVercel,
+  SiNetlify,
+} from "react-icons/si"
+import { VscVscode } from "react-icons/vsc";
 
 export const navigation = [
   { name: 'Home', href: '#home' },
@@ -270,6 +290,42 @@ export const others = [
         name: "Netlify",
         icon: "/icon/netlify.svg"
     } 
+]
+
+export const skillCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React", icon: SiReact, color: "text-blue-500" },
+      { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-600" },
+      { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500" },
+      { name: "Sass", icon: SiSass, color: "text-pink-500" },
+      { name: "HTML5", icon: SiHtml5, color: "text-orange-600" },
+      { name: "CSS3", icon: SiCss3, color: "text-blue-500" },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs, color: "text-green-600" },
+      { name: "Express", icon: SiExpress, color: "text-gray-600 dark:text-gray-400" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700" },
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    skills: [
+      { name: "Git", icon: SiGit, color: "text-orange-600" },
+      { name: "GitHub", icon: SiGithub, color: "text-black dark:text-white" },
+      { name: "VS Code", icon: VscVscode, color: "text-blue-600" },
+      { name: "Figma", icon: SiFigma, color: "text-purple-500" },
+      { name: "Vercel", icon: SiVercel, color: "text-black dark:text-white" },
+      { name: "Netlify", icon: SiNetlify, color: "text-teal-500" },
+    ],
+  },
 ]
 
 export const sections = ["about", "skills", "projects", "education", "contact"];

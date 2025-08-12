@@ -14,7 +14,7 @@ const TechIcon = ({ name, icon }: SkillsTech) => {
             className="w-6 h-6 min-sm:w-8 min-sm:h-8 object-contain"
           />
         </figure>
-        <h3 className="text-white text-xs min-sm:text-sm min-md:text-base">
+        <h3 className="text-muted-foreground text-xs min-sm:text-sm min-md:text-base">
           {name}
         </h3>
       </div>
