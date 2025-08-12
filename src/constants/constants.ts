@@ -1,10 +1,4 @@
-import {
-  FaFacebookF,
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
-import { Code, Lightbulb, Server, Users, Zap } from "lucide-react";
+import { Code, Github, Lightbulb, Linkedin, Mail, Server, Users, Zap } from "lucide-react";
 import {
   SiReact,
   SiNextdotjs,
@@ -246,31 +240,19 @@ export const sections = ["about", "skills", "projects", "education", "contact"];
 
 export const socials = [
   {
-    id: 1,
-    icon: <FaFacebookF size={24} color="#fff" />,
-    name: "Facebook",
-    link: "https://www.facebook.com/codewithsaidul",
-  },
-  {
-    id: 2,
-    icon: <FaGithub size={24} color="#fff" />,
+    icon: Github,
     name: "GitHub",
     link: "https://github.com/codewithsaidul",
-    size: 32,
   },
   {
-    id: 3,
-    icon: <FaLinkedinIn size={24} color="#fff" />,
+    icon: Linkedin,
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/codewithsaidul",
-    size: 32,
   },
   {
-    id: 4,
-    icon: <FaInstagram size={24} color="#fff" />,
-    name: "Instagram",
-    link: "https://www.instagram.com/codewithsaidul",
-    size: 32,
+    icon: Mail,
+    name: "Mail",
+    link: "mailto:codewithsaidul@gmail.com",
   },
 ];
 
@@ -297,7 +279,7 @@ export const highlights = [
   },
 ];
 
-export const technologies = [
+export const technologies: string[] = [
   "React",
   "TypeScript",
   "Next.js",
