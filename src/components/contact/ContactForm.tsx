@@ -5,9 +5,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
-import Button from "../ui/Custom/Button";
 import { Form } from "../ui/form";
 import FormField from "./FormField";
+import CustomButton from "../ui/Custom/Button";
 
 const contactFormSchema = () => {
   return z.object({
@@ -51,9 +51,9 @@ const ContactForm = () => {
         },
         process.env.NEXT_PUBLIC_EMAIL_PUBLIC_ID as string
       );
-      form.reset()
+      form.reset();
       toast.success("Message sent successfully!");
-      setLoading(false)
+      setLoading(false);
     } catch (error: unknown) {
       console.log(error);
       setLoading(false);
@@ -126,7 +126,7 @@ const ContactForm = () => {
           </div>
           {/* ========== btn ============= */}
           <div className="col-span-12">
-            <Button
+            <CustomButton
               title={loading ? "Sending..." : "Send Message"}
               loading={loading}
               type="filed"

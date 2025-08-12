@@ -1,10 +1,8 @@
 "use client";
-import { SidebarProps } from "@/types/types";
+import { SidebarProps } from "@/types";
 import Link from "next/link";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
-
-
 
 const Sidebar = ({ isOpen, setIsOpen, sections }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
@@ -29,19 +27,17 @@ const Sidebar = ({ isOpen, setIsOpen, sections }: SidebarProps) => {
             <Link href={`#${section}`}>{section}</Link>
           </li>
         ))}
-
-        
       </ul>
 
       <div className="w-full flex mt-6">
-          <Link
-            href="https://github.com/codewithsaidul"
-            target="_blank"
-            className="text-center w-full max-[340px]:py-2 max-[340px]:px-5 py-3 px-7 max-[340px]:text-base text-xl font-dm-serif bg-gradient-to-r from-[#90caf9] to-[#4a90e2] text-white rounded-full border-2 border-primary duration-700 hover:bg-none  hover:bg-transparent hover:border-primary hover:duration-700 transition-all"
-          >
-            Github Profile
-          </Link>
-        </div>
+        <Link
+          href="https://github.com/codewithsaidul"
+          target="_blank"
+          className="text-center w-full max-[340px]:py-2 max-[340px]:px-5 py-3 px-7 max-[340px]:text-base text-xl font-dm-serif bg-gradient-to-r from-[#90caf9] to-[#4a90e2] text-white rounded-full border-2 border-primary duration-700 hover:bg-none  hover:bg-transparent hover:border-primary hover:duration-700 transition-all"
+        >
+          Github Profile
+        </Link>
+      </div>
     </div>
   );
 };

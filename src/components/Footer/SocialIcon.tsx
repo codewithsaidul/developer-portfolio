@@ -1,4 +1,4 @@
-import { SocialIconProps } from "@/types/types";
+import { SocialIconProps } from "@/types";
 import Link from "next/link";
 
 const SocialIcon = ({ social }: SocialIconProps) => {
@@ -7,7 +7,7 @@ const SocialIcon = ({ social }: SocialIconProps) => {
     <Link
       href={link}
       target="_blank"
-      aria-label={name} 
+      aria-label={name}
       className="p-3 border border-primary bg-transparent duration-700 rounded-full hover:bg-primary hover:duration-700 transition-all ease-in-out"
     >
       {icon}

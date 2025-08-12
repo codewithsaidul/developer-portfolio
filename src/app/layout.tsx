@@ -1,9 +1,10 @@
 import Navbar from "@/components/Header/Navbar";
 import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
-import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import  { Toaster } from 'react-hot-toast';
+import "./global.css"
+import { ThemeProvider } from "@/Provider/ThemeProvider";
 
 
 
@@ -78,26 +79,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body className={`${getInter.variable} ${dmSerif.variable} relative antialiased`}>
-        {/* ================ bg blur ==================== */}
-       <div>
-          <div
-            className={
-              "absolute left-0  w-[300px] h-[400px] min-[830px]:w-[400px] bg-white opacity-10 blur-3xl lg:-top-[100px]"
-            }
-          />
-          <div
-            className={
-              "absolute right-0  w-[300px] h-[400px] bg-white opacity-10 blur-3xl top-60"
-            }
-          />
-       </div>
-       {/* ================ bg blur ==================== */}
-        <Navbar />
-        {children}
-        <Footer />
-        <Toaster position="top-center" />
+        <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
+          {/* ================ bg blur ==================== */}
+         <div>
+            <div
+              className={
+                "absolute left-0  w-[300px] h-[400px] min-[830px]:w-[400px] bg-white opacity-10 blur-3xl lg:-top-[100px]"
+              }
+            />
+            <div
+              className={
+                "absolute right-0  w-[300px] h-[400px] bg-white opacity-10 blur-3xl top-60"
+              }
+            />
+         </div>
+         {/* ================ bg blur ==================== */}
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster position="top-center" />
+        </ThemeProvider>
       </body>
     </html>
   );

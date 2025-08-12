@@ -1,8 +1,8 @@
-import { ButtonProps } from "@/types/types";
+import { CustomButtonProps } from "@/types";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
-const Button = ({ title, link, type, loading }: ButtonProps) => {
+const CustomButton = ({ title, link, type, loading }: CustomButtonProps) => {
   return link ? (
     <Link
       href={link}
@@ -32,4 +32,4 @@ const Button = ({ title, link, type, loading }: ButtonProps) => {
   );
 };
 
-export default Button;
+export default CustomButton;

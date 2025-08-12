@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
+
+
   return (
     <section
+
       id="about"
       className="w-full min-h-screen flex justify-center items-center"
     >
@@ -15,14 +18,14 @@ const Hero = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="text-white text-center">
-          <span className="text-4xl min-[415px]:text-5xl min-[500px]:text-6xl md:text-7xl font-medium text-textSecondary">
+          <span className="text-4xl min-[415px]:text-5xl min-[500px]:text-6xl md:text-7xl font-medium text-primary">
             Hi, I am
           </span>
-          <h1 className="text-4xl min-[415px]:text-5xl min-[500px]:text-6xl md:text-7xl font-dm-serif capitalize my-5">
+          <h1 className="text-muted-foreground text-4xl min-[415px]:text-5xl min-[500px]:text-6xl md:text-7xl font-dm-serif capitalize my-5">
             saidul islam rana
           </h1>
 
-          <h2 className="text-xl min-[415px]:text-3xl md:text-4xl">
+          <h2 className="text-muted-foreground text-xl min-[415px]:text-3xl md:text-4xl">
             I am a{" "}
             <span className="font-dm-serif text-primary">
               {/* Juinor Web Developer */}
@@ -42,7 +45,7 @@ const Hero = () => {
             </span>
           </h2>
 
-          <p className="max-[370px]:text-sm text-base text-textPrimary md:text-lg mt-5 w-full lg:w-3xl">
+          <p className="text-muted-foreground max-[370px]:text-sm text-base text-textPrimary md:text-lg mt-5 w-full lg:w-3xl">
             I&apos;m a JavaScript-based web developer with a solid understanding
             of core programming concepts like variables, conditions, loops,
             arrays, and functions. I work mostly with React and Next.js to build
