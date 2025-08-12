@@ -151,7 +151,7 @@
   }
 
   body {
-    @apply bg-background text-foreground min-h-screen;
+    @apply bg-background text-foreground overflow-x-hidden;
     /* Enhanced theme transitions */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -463,4 +463,16 @@
   .text-gradient-accent {
     @apply bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
   }
+
+  .section-padding {
+    @apply py-20;
+  }
+  /* Hover Utilities */
+  .hover-lift {
+    @apply transition-all! duration-300! hover:-translate-y-1! hover:shadow-lg!;
+  }
+
+  /* .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow;
+  } */
 }

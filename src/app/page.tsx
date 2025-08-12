@@ -1,3 +1,4 @@
+import About from "@/components/About/About";
 import Contact from "@/sections/Contact";
 import Education from "@/sections/Education";
 import Hero from "@/sections/Hero";
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
+      <About />
       <Skills />
       <Projects />
       <Education />
