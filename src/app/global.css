@@ -6,10 +6,10 @@
 
 /* @theme {
   --color-primary: #90caf9; */
-  /* --color-secondary: #ffd54f;  #FFB300   */
-  /* --color-dark: #121212;  #FFB300   */
-  /* --color-card: #1e1e1e;  #FFB300   */
-  /* --color-textPrimary: #bdbdbd;
+/* --color-secondary: #ffd54f;  #FFB300   */
+/* --color-dark: #121212;  #FFB300   */
+/* --color-card: #1e1e1e;  #FFB300   */
+/* --color-textPrimary: #bdbdbd;
   --color-textSecondary: #ffffff;
   --color-success: #81c784;
   --shadow-5xl: 0 0px 8px rgba(255,255,255,0.2);
@@ -55,7 +55,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --shadow-sm: 
+  --shadow-sm: ;
 
   /* custome font family */
 }
@@ -137,14 +137,14 @@
 /*  ---break---   */
 
 @layer base {
-* {
+  * {
     @apply border-border outline-ring/50;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
     /* Enhanced mobile support */
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -177,22 +177,18 @@
 
 @layer utilities {
   .body-lock {
-    @apply overflow-hidden
+    @apply overflow-hidden;
   }
 
   .input {
-    @apply text-xl text-foreground border border-primary focus:border-primary outline-none
+    @apply text-xl text-foreground border border-primary focus:border-primary outline-none;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
   }
 }
-
-
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
