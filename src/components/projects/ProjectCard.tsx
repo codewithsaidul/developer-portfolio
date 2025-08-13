@@ -1,5 +1,5 @@
 "use client";
-import { ProjectCardProps } from "@/types/types";
+import { ProjectCardProps } from "@/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Technology from "./Technology";
@@ -62,7 +62,9 @@ const ProjectCard = ({
           <h2 className="text-3xl font-dm-serif text-textSecondary mb-4 overflow-hidden truncate">
             {title}
           </h2>
-          <p className="text-base text-textPrimary line-clamp-3">{description}</p>
+          <p className="text-base text-textPrimary line-clamp-3">
+            {description}
+          </p>
         </div>
 
         {/* ========================= Project BTN ====================== */}

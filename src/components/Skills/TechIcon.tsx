@@ -1,4 +1,4 @@
-import { SkillsTech } from "@/types/types";
+import { SkillsTech } from "@/types";
 import Image from "next/image";
 
 const TechIcon = ({ name, icon }: SkillsTech) => {

@@ -1,8 +1,8 @@
-import { ProjectModelProps } from "@/types/types";
+import { ProjectModelProps } from "@/types";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
-import Button from "../ui/Custom/Button";
 import Technology from "./Technology";
+import CustomButton from "../ui/Custom/Button";
 
 const ProjectModal = ({ project, isOpen, setIsOpen }: ProjectModelProps) => {
   const { title, thumbnail, description, techs, liveLink, codeLink } = project;
@@ -40,18 +40,18 @@ const ProjectModal = ({ project, isOpen, setIsOpen }: ProjectModelProps) => {
           </div>
 
           <div className="flex max-[399px]:flex-col gap-2 mt-8 overflow-hidden truncate">
-            <Button title="View Code" link={codeLink} type="outline" />
-            <Button title="Live Demo" link={liveLink} type="filed" />
+            <CustomButton title="View Code" link={codeLink} type="outline" />
+            <CustomButton title="Live Demo" link={liveLink} type="filed" />
           </div>
         </div>
       </div>
 
-      <button
+      <CustomButton
         onClick={handleCloseModal}
         className="absolute top-3 right-3 cursor-pointer"
       >
         <IoClose size={32} color="#fff" />
-      </button>
+      </CustomButton>
     </div>
   );
 };

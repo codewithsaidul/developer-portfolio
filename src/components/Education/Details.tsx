@@ -1,9 +1,7 @@
 import LiIcon from "@/components/ui/Custom/LiIcon";
-import { DetailsProps } from "@/types/types";
+import { DetailsProps } from "@/types";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-
-
 
 const Details = ({ type, time, place, info }: DetailsProps) => {
   const ref = useRef(null);
