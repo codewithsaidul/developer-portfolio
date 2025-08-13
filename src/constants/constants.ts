@@ -1,40 +1,35 @@
-import { Code, Github, Lightbulb, Linkedin, Mail, Server, Users, Zap } from "lucide-react";
+import { Code, Lightbulb, Server, Users, Zap } from "lucide-react";
+import { BiLogoFirebase } from "react-icons/bi";
+import { GiMagicLamp } from "react-icons/gi";
+import { GrMysql } from "react-icons/gr";
+import { MdOutlineSmartToy } from "react-icons/md";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiTailwindcss,
-  SiSass,
-  SiHtml5,
   SiCss3,
-  SiNodedotjs,
   SiExpress,
-  SiMongodb,
-  SiPostgresql,
+  SiFigma,
   SiGit,
   SiGithub,
-  SiFigma,
-  SiVercel,
+  SiGraphql,
+  SiHtml5,
+  SiJavascript,
+  SiMongodb,
+  SiMui,
+  SiN8N,
   SiNetlify,
-  SiSocketdotio, SiGraphql, SiOpenai, SiN8N, SiRedux, SiMui, SiShadcnui
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiReact,
+  SiRedux,
+  SiSass,
+  SiShadcnui,
+  SiSocketdotio,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { BiLogoFirebase } from "react-icons/bi";
-import { GrMysql } from "react-icons/gr";
-import { GiMagicLamp } from "react-icons/gi";
-import { MdOutlineSmartToy } from "react-icons/md";
-
-
-
-export const navigation = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Blog", href: "#blog" },
-  { name: "Contact", href: "#contact" },
-];
 
 export const projects = [
   {
@@ -187,18 +182,42 @@ export const projects = [
   },
 ];
 
-
 export const skillCategories = [
   {
     title: "Frontend",
     skills: [
       { name: "React", icon: SiReact, color: "text-blue-500", size: 24 },
       { name: "Redux", icon: SiRedux, color: "text-purple-500", size: 24 },
-      { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white", size: 24 },
-      { name: "TypeScript", icon: SiTypescript, color: "text-blue-600", size: 24 },
-      { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500", size: 24 },
-      { name: "ShadCn", icon: SiShadcnui, color: "text-muted-forground", size: 24 },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500", size: 24 },
+      {
+        name: "Next.js",
+        icon: SiNextdotjs,
+        color: "text-black dark:text-white",
+        size: 24,
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+        color: "text-blue-600",
+        size: 24,
+      },
+      {
+        name: "JavaScript",
+        icon: SiJavascript,
+        color: "text-yellow-500",
+        size: 24,
+      },
+      {
+        name: "ShadCn",
+        icon: SiShadcnui,
+        color: "text-muted-forground",
+        size: 24,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
+        color: "text-cyan-500",
+        size: 24,
+      },
       { name: "Material UI", icon: SiMui, color: "text-blue-500", size: 24 },
       { name: "Sass", icon: SiSass, color: "text-pink-500", size: 24 },
       { name: "HTML5", icon: SiHtml5, color: "text-orange-600", size: 24 },
@@ -208,51 +227,65 @@ export const skillCategories = [
   {
     title: "Backend",
     skills: [
-        { name: "Firebase", icon: BiLogoFirebase, color: "text-yellow-400"},
-        { name: "MongoDB", icon: SiMongodb, color: "text-green-500"},
-        { name: "Express", icon: SiExpress, color: "text-gray-600 dark:text-gray-400"},
-        { name: "Node.js", icon: SiNodedotjs, color: "text-green-600"},
-        { name: "Restfull Api", icon: Server, color: "text-primary"},
-        { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700"},
-        { name: "GraphQL", icon: SiGraphql, color: "text-rose-500"},
-        { name: "MySQl", icon: GrMysql, color: "text-sky-600"},
-        { name: "Socket.io", icon: SiSocketdotio, color: "text-muted-forground"},
+      { name: "Firebase", icon: BiLogoFirebase, color: "text-yellow-400" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+      {
+        name: "Express",
+        icon: SiExpress,
+        color: "text-gray-600 dark:text-gray-400",
+      },
+      { name: "Node.js", icon: SiNodedotjs, color: "text-green-600" },
+      { name: "Restfull Api", icon: Server, color: "text-primary" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700" },
+      { name: "GraphQL", icon: SiGraphql, color: "text-rose-500" },
+      { name: "MySQl", icon: GrMysql, color: "text-sky-600" },
+      { name: "Socket.io", icon: SiSocketdotio, color: "text-muted-forground" },
     ],
   },
   {
     title: "Tools & Platforms",
     skills: [
       { name: "Git", icon: SiGit, color: "text-orange-600", size: 24 },
-      { name: "GitHub", icon: SiGithub, color: "text-black dark:text-white", size: 24 },
+      {
+        name: "GitHub",
+        icon: SiGithub,
+        color: "text-black dark:text-white",
+        size: 24,
+      },
       { name: "VS Code", icon: VscVscode, color: "text-blue-600", size: 24 },
-      { name: "Chat GPT", icon: SiOpenai, color: "text-black dark:text-white", size: 24 },
-      { name: "N8N", icon: SiN8N, color: "text-black dark:text-white", size: 24 },
+      {
+        name: "Chat GPT",
+        icon: SiOpenai,
+        color: "text-black dark:text-white",
+        size: 24,
+      },
+      {
+        name: "N8N",
+        icon: SiN8N,
+        color: "text-black dark:text-white",
+        size: 24,
+      },
       { name: "Figma", icon: SiFigma, color: "text-purple-500", size: 24 },
-      { name: "Vercel", icon: SiVercel, color: "text-black dark:text-white", size: 24 },
+      {
+        name: "Vercel",
+        icon: SiVercel,
+        color: "text-black dark:text-white",
+        size: 24,
+      },
       { name: "Netlify", icon: SiNetlify, color: "text-teal-500", size: 24 },
-      { name: "Lovable AI", icon: MdOutlineSmartToy, color: "text-rose-500", size: 24 },
-      { name: "V0 AI", icon: GiMagicLamp, color: "text-muted-forground", size: 24 },
+      {
+        name: "Lovable AI",
+        icon: MdOutlineSmartToy,
+        color: "text-rose-500",
+        size: 24,
+      },
+      {
+        name: "V0 AI",
+        icon: GiMagicLamp,
+        color: "text-muted-forground",
+        size: 24,
+      },
     ],
-  },
-]
-
-export const sections = ["about", "skills", "projects", "education", "contact"];
-
-export const socials = [
-  {
-    icon: Github,
-    name: "GitHub",
-    link: "https://github.com/codewithsaidul",
-  },
-  {
-    icon: Linkedin,
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/codewithsaidul",
-  },
-  {
-    icon: Mail,
-    name: "Mail",
-    link: "mailto:codewithsaidul@gmail.com",
   },
 ];
 
