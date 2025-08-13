@@ -58,6 +58,7 @@ export default function Footer() {
             variant="outline"
             size="icon"
             onClick={scrollToTop}
+            aria-label="Scroll to hero section"
             className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 bg-background/50 backdrop-blur-sm animate-bounce"
           >
             <ArrowUp className="h-5 w-5" />
@@ -65,7 +66,7 @@ export default function Footer() {
 
           {/* Name/Brand */}
           <div className="text-center">
-            <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
+            <h3 className="text-3xl font-serif font-bold text-foreground mb-2">
               Saidul Islam Rana
             </h3>
             <p className="text-muted-foreground">Frontend Developer</p>

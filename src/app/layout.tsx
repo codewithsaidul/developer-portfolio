@@ -83,7 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className={`${getInter.variable} ${dmSerif.variable} relative antialiased`}>
-        <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
+        <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
           <AnimationProvider>
             <SmoothScroll>
               <Navbar />

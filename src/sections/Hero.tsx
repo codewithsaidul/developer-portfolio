@@ -40,7 +40,7 @@ export default function Hero() {
 
         tl.fromTo(
           titleRef1.current,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 60 },
           { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
         )
           .fromTo(
@@ -132,13 +132,10 @@ export default function Hero() {
   };
 
   return (
-    <section
-      ref={heroRef}
-      className="relative min-h-screen"
-    >
-       {/* Clean Gradient Background */}
+    <section ref={heroRef} className="relative min-h-screen">
+      {/* Clean Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-primary-muted/30 to-accent-muted/20" />
-         <div
+      <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage: `
@@ -151,7 +148,10 @@ export default function Hero() {
       />
       <div className="min-h-screen flex items-center justify-center">
         {/* Animated Background Shapes */}
-        <div ref={backgroundRef} className="absolute inset-0 pointer-events-none">
+        <div
+          ref={backgroundRef}
+          className="absolute inset-0 pointer-events-none"
+        >
           <div
             ref={shape1Ref}
             className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-xl"
@@ -166,7 +166,7 @@ export default function Hero() {
           />
           <div className="absolute bottom-20 right-10 w-36 h-36 bg-gradient-to-br from-indigo-400/10 to-cyan-400/10 rounded-2xl blur-xl rotate-45" />
         </div>
-  
+
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
@@ -184,8 +184,11 @@ export default function Hero() {
               >
                 Saidul Islam Rana
               </h1>
-  
-              <h2 ref={titleRef3} className="text-muted-foreground text-xl min-[415px]:text-3xl md:text-4xl my-3">
+
+              <h2
+                ref={titleRef3}
+                className="text-muted-foreground text-xl min-[415px]:text-3xl md:text-4xl my-3"
+              >
                 I am a{" "}
                 <span className="font-dm-serif text-primary">
                   {/* Juinor Web Developer */}
@@ -205,7 +208,7 @@ export default function Hero() {
                 </span>
               </h2>
             </div>
-  
+
             {/* Description */}
             <p
               ref={descRef}
@@ -214,7 +217,7 @@ export default function Hero() {
               Frontend Developer crafting beautiful, functional web experiences
               with modern technologies
             </p>
-  
+
             {/* CTA Buttons */}
             <div
               ref={ctaRef}
@@ -225,9 +228,15 @@ export default function Hero() {
                 className="rounded-2xl px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 asChild
               >
-                <Link href="/frontend-developer-resume-of-saidul.pdf" download className="flex items-center gap-1">
-                <span><Download size={24} /></span>
-                Download Resume
+                <Link
+                  href="/frontend-developer-resume-of-saidul.pdf"
+                  download
+                  className="flex items-center gap-1"
+                >
+                  <span>
+                    <Download size={24} />
+                  </span>
+                  Download Resume
                 </Link>
               </Button>
               <Button
@@ -243,9 +252,12 @@ export default function Hero() {
                 Get In Touch
               </Button>
             </div>
-  
+
             {/* Social Links */}
-            <div ref={ctaBtnRef} className="flex items-center justify-center space-x-6 mb-12">
+            <div
+              ref={ctaBtnRef}
+              className="flex items-center justify-center space-x-6 mb-12"
+            >
               <Link
                 href="https://github.com/codewithsaidul"
                 target="_blank"
@@ -272,10 +284,10 @@ export default function Hero() {
                 <Mail className="h-6 w-6" />
               </Link>
             </div>
-  
+
             {/* Scroll Indicator */}
             <button
-            ref={arrowBtnRef}
+              ref={arrowBtnRef}
               onClick={scrollToAbout}
               className="animate-bounce p-2 rounded-full hover:bg-muted/50 transition-colors duration-300"
               aria-label="Scroll to about section"
