@@ -222,10 +222,13 @@ export default function Hero() {
             >
               <Button
                 size="lg"
-                className="rounded-2xl px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-1"
+                className="rounded-2xl px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                asChild
               >
+                <Link href="/frontend-developer-resume-of-saidul.pdf" download className="flex items-center gap-1">
                 <span><Download size={24} /></span>
-                <Link href="/frontend-developer-resume-of-saidul.pdf" download>Download Resume</Link>
+                Download Resume
+                </Link>
               </Button>
               <Button
                 variant="outline"
@@ -247,6 +250,7 @@ export default function Hero() {
                 href="https://github.com/codewithsaidul"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="github"
                 className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 <Github className="h-6 w-6" />
@@ -255,12 +259,14 @@ export default function Hero() {
                 href="https://linkedin.com/in/codewithsaidul"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="linkedin"
                 className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 <Linkedin className="h-6 w-6" />
               </Link>
               <Link
                 href="mailto:codewithsaidul@gmail.com"
+                aria-label="email"
                 className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 <Mail className="h-6 w-6" />

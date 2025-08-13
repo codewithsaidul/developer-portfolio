@@ -194,9 +194,9 @@ const Skills = () => {
                       <span className="skill-icon">
                         <tech.icon size={20} className={`${tech.color}`} />
                       </span>
-                      <h4 className="text-base text-muted-foreground">
+                      <p className="text-base text-muted-foreground">
                         {tech.name}
-                      </h4>
+                      </p>
                     </div>
                   </div>
                 ))}

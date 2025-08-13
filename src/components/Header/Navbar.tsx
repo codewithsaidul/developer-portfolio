@@ -60,7 +60,7 @@ export default function Header() {
 
           {/* Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <Button variant="outline" size="lg" className="max-[420px]:hidden hover:bg-primary! duration-700! hover:duration-700!">
+            <Button variant="outline" size="lg" className="max-[420px]:hidden hover:bg-primary! duration-700! hover:duration-700! py-3 px-7">
               <Link href="https://github.com/codewithsaidul"
               target="_blank"
               rel="noopener noreferrer">
@@ -85,6 +85,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
+              aria-label="menu icon"
               className="md:hidden rounded-2xl hover:bg-muted/50 transition-all duration-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >

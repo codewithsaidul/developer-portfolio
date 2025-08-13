@@ -77,6 +77,7 @@ export default function Footer() {
               href="https://github.com/codewithsaidul"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="github"
               className="social-link p-3 rounded-2xl bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-300 shadow-lg"
             >
               <Github className="h-6 w-6" />
@@ -85,12 +86,14 @@ export default function Footer() {
               href="https://linkedin.com/in/codewithsaidul"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Linkedin"
               className="social-link p-3 rounded-2xl bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-300 shadow-lg"
             >
               <Linkedin className="h-6 w-6" />
             </Link>
             <Link
               href="mailto:codewithsaidul@gmail.com"
+              aria-label="email"
               className="social-link p-3 rounded-2xl bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-300 shadow-lg"
             >
               <Mail className="h-6 w-6" />
