@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
-
 // Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -24,7 +24,7 @@ export default function Hero() {
   const shape2Ref = useRef<HTMLDivElement>(null);
   const shape3Ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const ctx = gsap.context(() => {
       // Check for reduced motion preference
       const prefersReducedMotion = window.matchMedia(
@@ -119,7 +119,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen overflow-hidden"
+      className="relative min-h-screen"
     >
        {/* Clean Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-primary-muted/30 to-accent-muted/20" />

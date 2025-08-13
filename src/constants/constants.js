@@ -1,5 +1,5 @@
 import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-
+import { Code, Lightbulb, Users, Zap } from "lucide-react";
 
 export const navigation = [
   { name: 'Home', href: '#home' },
@@ -302,6 +302,50 @@ export const socials = [
       link: "https://www.instagram.com/codewithsaidul",
       size: 32
     }
-  ];
+];
+
+
+
+export const highlights = [
+  {
+    icon: Code,
+    title: "Clean Code",
+    description: "Writing maintainable, scalable, and well-documented code",
+  },
+  {
+    icon: Lightbulb,
+    title: "Problem Solving",
+    description: "Creative solutions to complex technical challenges",
+  },
+  {
+    icon: Users,
+    title: "Collaboration",
+    description: "Effective teamwork and clear communication",
+  },
+  {
+    icon: Zap,
+    title: "Performance",
+    description: "Optimized applications for the best user experience",
+  },
+];
+
+
+export const technologies = [
+  "React",
+  "TypeScript",
+  "Next.js",
+  "Vue.js",
+  "Node.js",
+  "Tailwind CSS",
+  "SCSS",
+  "JavaScript ES6+",
+  "GraphQL",
+  "REST APIs",
+  "Git",
+  "Docker",
+  "AWS",
+  "MongoDB",
+  "PostgreSQL",
+];
   
 
