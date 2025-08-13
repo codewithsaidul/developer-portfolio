@@ -1,72 +1,261 @@
 "use client";
-import { motion } from "framer-motion";
+
+import { useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Typewriter } from "react-simple-typewriter";
 
-const Hero = () => {
+// Register GSAP plugins
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
+export default function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+  const titleRef1 = useRef<HTMLHeadingElement>(null);
+  const titleRef2 = useRef<HTMLHeadingElement>(null);
+  const titleRef3 = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const shape1Ref = useRef<HTMLDivElement>(null);
+  const shape2Ref = useRef<HTMLDivElement>(null);
+  const shape3Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Check for reduced motion preference
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (!prefersReducedMotion) {
+        // Hero content animation
+        const tl = gsap.timeline();
+
+        tl.fromTo(
+          titleRef1.current,
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 1.3, ease: "power3.out" }
+        )
+          .fromTo(
+            titleRef2.current,
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" },
+            "-=0.5"
+          )
+          .fromTo(
+            titleRef3.current,
+            { opacity: 0, y: 40 },
+            { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+            "-=0.5"
+          )
+          .fromTo(
+            descRef.current,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+            "-=0.5"
+          )
+          .fromTo(
+            ctaRef.current,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+            "-=0.3"
+          );
+
+        // Floating background shapes
+        gsap.to(shape1Ref.current, {
+          y: -20,
+          rotation: 5,
+          duration: 4,
+          ease: "power1.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
+
+        gsap.to(shape2Ref.current, {
+          y: -15,
+          rotation: -3,
+          duration: 5,
+          ease: "power1.inOut",
+          repeat: -1,
+          yoyo: true,
+          delay: 1,
+        });
+
+        gsap.to(shape3Ref.current, {
+          y: -25,
+          rotation: 8,
+          duration: 6,
+          ease: "power1.inOut",
+          repeat: -1,
+          yoyo: true,
+          delay: 2,
+        });
+
+        // Parallax effect on scroll
+        gsap.to(backgroundRef.current, {
+          yPercent: -50,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const scrollToAbout = () => {
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
-
-      id="about"
-      className="w-full min-h-screen flex justify-center items-center"
+      ref={heroRef}
+      className="relative min-h-screen overflow-hidden"
     >
-      <motion.div
-        className="mt-20"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        <div className="text-white text-center">
-          <span className="text-4xl min-[415px]:text-5xl min-[500px]:text-6xl md:text-7xl font-medium text-primary">
-            Hi, I am
-          </span>
-          <h1 className="text-muted-foreground text-4xl min-[415px]:text-5xl min-[500px]:text-6xl md:text-7xl font-dm-serif capitalize my-5">
-            saidul islam rana
-          </h1>
-
-          <h2 className="text-muted-foreground text-xl min-[415px]:text-3xl md:text-4xl">
-            I am a{" "}
-            <span className="font-dm-serif text-primary">
-              {/* Juinor Web Developer */}
-              <Typewriter
-                words={[
-                  "Front-End Developer",
-                  "Juinor Web Developer",
-                  "Programmer",
-                ]}
-                loop={true}
-                cursor
-                cursorStyle="|"
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1500}
-              />
-            </span>
-          </h2>
-
-          <p className="text-muted-foreground max-[370px]:text-sm text-base text-textPrimary md:text-lg mt-5 w-full lg:w-3xl">
-            I&apos;m a JavaScript-based web developer with a solid understanding
-            of core programming concepts like variables, conditions, loops,
-            arrays, and functions. I work mostly with React and Next.js to build
-            modern, responsive web applications, and have backend experience
-            with Node.js and MongoDB.
-          </p>
-
-          <div className="mt-5 flex justify-center">
-            <a
-              href="/frontend-developer-resume-of-saidul.pdf"
-              download
-              target="_blank"
-              className="text-2xl font-dm-serif bg-gradient-to-r from-[#90caf9] to-[#4a90e2] text-textSecondary text-center py-4 px-8 rounded-3xl max-[450px]:w-[250px] max-[767px]:w-[400px] min-[768px]:w-[350px] border-2 border-primary duration-1000 hover:bg-none hover:duration-1000 transition-all"
+       {/* Clean Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary-muted/30 to-accent-muted/20" />
+      <div className="min-h-screen flex items-center justify-center">
+        {/* Animated Background Shapes */}
+        <div ref={backgroundRef} className="absolute inset-0 pointer-events-none">
+          <div
+            ref={shape1Ref}
+            className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-xl"
+          />
+          <div
+            ref={shape2Ref}
+            className="absolute top-40 right-20 w-48 h-48 bg-gradient-to-br from-pink-400/10 to-orange-400/10 rounded-2xl blur-xl rotate-12"
+          />
+          <div
+            ref={shape3Ref}
+            className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-green-400/10 to-teal-400/10 rounded-full blur-xl"
+          />
+          <div className="absolute bottom-20 right-10 w-36 h-36 bg-gradient-to-br from-indigo-400/10 to-cyan-400/10 rounded-2xl blur-xl rotate-45" />
+        </div>
+  
+        {/* Hero Content */}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto">
+            {/* Main Title */}
+            <div>
+              <p
+                ref={titleRef1}
+                className="text-xl font-serif font-bold text-foreground mb-6 leading-tight"
+              >
+                Hi, I&apos;m{" "}
+              </p>
+              <h1
+                ref={titleRef2}
+                className="text-4xl sm:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+              >
+                Saidul Islam Rana
+              </h1>
+  
+              <h2 ref={titleRef3} className="text-muted-foreground text-xl min-[415px]:text-3xl md:text-4xl my-3">
+                I am a{" "}
+                <span className="font-dm-serif text-primary">
+                  {/* Juinor Web Developer */}
+                  <Typewriter
+                    words={[
+                      "Front-End Developer",
+                      "Juinor Web Developer",
+                      "Programmer",
+                    ]}
+                    loop={true}
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1500}
+                  />
+                </span>
+              </h2>
+            </div>
+  
+            {/* Description */}
+            <p
+              ref={descRef}
+              className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 font-light leading-relaxed"
             >
-              Check Resume
-            </a>
+              Frontend Developer crafting beautiful, functional web experiences
+              with modern technologies
+            </p>
+  
+            {/* CTA Buttons */}
+            <div
+              ref={ctaRef}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+            >
+              <Button
+                size="lg"
+                className="rounded-2xl px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                onClick={() =>
+                  document
+                    .getElementById("projects")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                View My Work
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-2xl px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-transparent"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Get In Touch
+              </Button>
+            </div>
+  
+            {/* Social Links */}
+            <div className="flex items-center justify-center space-x-6 mb-12">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
+              >
+                <Github className="h-6 w-6" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <a
+                href="mailto:contact@saidulrana.dev"
+                className="p-3 rounded-2xl bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 shadow-lg"
+              >
+                <Mail className="h-6 w-6" />
+              </a>
+            </div>
+  
+            {/* Scroll Indicator */}
+            <button
+              onClick={scrollToAbout}
+              className="animate-bounce p-2 rounded-full hover:bg-muted/50 transition-colors duration-300"
+              aria-label="Scroll to about section"
+            >
+              <ArrowDown className="h-6 w-6 text-muted-foreground" />
+            </button>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
-};
-
-export default Hero;
+}
