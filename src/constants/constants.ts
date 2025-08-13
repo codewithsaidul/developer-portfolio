@@ -1,4 +1,17 @@
-import { Code, Globe, Layers, Lightbulb, Server, Smartphone, Users, Zap, ZapIcon } from "lucide-react";
+import {
+  Code,
+  Globe,
+  Layers,
+  Lightbulb,
+  Mail,
+  MapPin,
+  Phone,
+  Server,
+  Smartphone,
+  Users,
+  Zap,
+  ZapIcon,
+} from "lucide-react";
 import { BiLogoFirebase } from "react-icons/bi";
 import { GiMagicLamp } from "react-icons/gi";
 import { GrMysql } from "react-icons/gr";
@@ -330,30 +343,50 @@ export const technologies: string[] = [
   "PostgreSQL",
 ];
 
-
 export const engineeringPillars = [
   {
     icon: Globe,
     name: "Web Api's",
     des: "Efficient integration with REST and GraphQL services.",
-    color: "text-blue-500"
+    color: "text-blue-500",
   },
   {
     icon: Smartphone,
     name: "Mobile First",
     des: "Designing interfaces that excel on all mobile devices.",
-    color: "text-purple-500"
+    color: "text-purple-500",
   },
   {
     icon: Layers,
     name: "Architecture",
     des: "Organizing backend code with modular MVC patterns.",
-    color: "text-cyan-500"
+    color: "text-cyan-500",
   },
   {
     icon: ZapIcon,
     name: "Performance",
     des: "Optimizing code for speed, scalability, and efficiency.",
-    color: "text-sky-500"
+    color: "text-sky-500",
   },
-]
+];
+
+export const contactInfo = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "codewithsaidul@gmail.com",
+    href: "mailto:codewithsaidul@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+880 1763079580",
+    href: "tel:+8801763079580",
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Sylhet Bangladesh",
+    href: "#",
+  },
+];
