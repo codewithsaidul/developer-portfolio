@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     "CodeWithSaidul",
     "Saidul Islam Rana",
   ],
-  authors: [{ name: "Saidul Islam Rana", url: "http://localhost:3000" }],
+  authors: [{ name: "Saidul Islam Rana", url: "https://codewithsaidul.vercel.app" }],
   creator: "CodeWithSaidul",
   openGraph: {
     title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "CodeWithSaidul Portfolio",
     images: [
       {
-        url: "http://localhost:3000/og-image.jpg",
+        url: "https://codewithsaidul.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "CodeWithSaidul Portfolio Preview",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     description:
       "JavaScript web developer specializing in frontend with React & backend with Node.js. Explore my latest projects and skills.",
     creator: "@codewithsaidul",
-    images: ["http://localhost:3000/og-image.jpg"],
+    images: ["https://codewithsaidul.vercel.app/og-image.jpg"],
   },
 };
 
