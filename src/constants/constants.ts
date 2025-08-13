@@ -329,3 +329,31 @@ export const technologies: string[] = [
   "MongoDB",
   "PostgreSQL",
 ];
+
+
+export const engineeringPillars = [
+  {
+    icon: Globe,
+    name: "Web Api's",
+    des: "Efficient integration with REST and GraphQL services.",
+    color: "text-blue-500"
+  },
+  {
+    icon: Smartphone,
+    name: "Mobile First",
+    des: "Designing interfaces that excel on all mobile devices.",
+    color: "text-purple-500"
+  },
+  {
+    icon: Layers,
+    name: "Architecture",
+    des: "Organizing backend code with modular MVC patterns.",
+    color: "text-cyan-500"
+  },
+  {
+    icon: ZapIcon,
+    name: "Performance",
+    des: "Optimizing code for speed, scalability, and efficiency.",
+    color: "text-sky-500"
+  },
+]
