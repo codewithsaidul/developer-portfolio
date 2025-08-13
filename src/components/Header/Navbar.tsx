@@ -39,9 +39,9 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-lg sm:text-xl lg:text-2xl font-serif font-bold text-foreground hover:text-primary transition-colors duration-200">
-              CodeWith<span className="text-primary">Saidul</span>
-            </h1>
+            <Link href="/" className="text-lg sm:text-xl lg:text-2xl font-serif font-bold hover:text-primary transition-colors duration-200 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent cursor-pointer">
+              CodeWithSaidul
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -60,6 +60,13 @@ export default function Header() {
 
           {/* Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-2 sm:space-x-4">
+            <Button variant="outline" size="lg" className="max-[420px]:hidden hover:bg-primary! duration-700! hover:duration-700!">
+              <Link href="https://github.com/codewithsaidul"
+              target="_blank"
+              rel="noopener noreferrer">
+                Github Profile
+              </Link>
+            </Button>
             <Button
               variant="ghost"
               size="sm"

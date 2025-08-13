@@ -1,75 +1,92 @@
 "use client";
-import { ProjectCardProps } from "@/types";
-import { motion } from "framer-motion";
+import { IProjectCardProps } from "@/types";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-import Technology from "./Technology";
+import Link from "next/link";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Card } from "../ui/card";
 
-const ProjectCard = ({
-  index,
-  project,
-  setIsOpen,
-  setProjectIndex,
-}: ProjectCardProps) => {
-  const { title, thumbnail, description, techs } = project;
+const ProjectCard = ({ project}: IProjectCardProps) => {
+  const isFullStack = project.categories.some(
+    (category) => category === "Full-Stack"
+  );
 
-  const MAX_VISIBLE_TAGS = 4;
-  const visibleTechs = techs.slice(0, MAX_VISIBLE_TAGS);
-  const remainingCount = techs.length - MAX_VISIBLE_TAGS;
-
-  const handleModal = () => {
-    setIsOpen(true);
-    setProjectIndex(index);
-    document.body.classList.add("body-lock");
-  };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className="bg-card shadow-5xl py-8 px-4 rounded-xl cursor-pointer transform transition-all duration-500 hover:scale-y-105 hover:duration-500"
-      onClick={handleModal}
-    >
-      <div>
-        {/* ============== Project Image =============== */}
-        <figure>
-          <Image
-            src={thumbnail}
-            alt={title}
-            width={600}
-            height={600}
-            className="w-full h-[250px] object-cover rounded-xl"
-          />
-        </figure>
+    <Card className="group overflow-hidden pt-0 hover-lift border border-border/50">
+      <div className="relative overflow-hidden">
+        <Image
+          src={project.thumbnail}
+          alt={project.title}
+          width={600}
+          height={600}
+          className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        {/* ============== Project Used Technology ================= */}
-        <div className="flex items-center gap-1.5 flex-wrap  min-h-[52px] my-10">
-          {visibleTechs.map((tech) => (
-            <Technology key={tech.id} name={tech.name} />
-          ))}
+        {/* Featured Badge */}
+        {isFullStack && (
+          <div className="absolute top-1 left-1">
+            <Badge className="bg-primary text-xl">Full Stack</Badge>
+          </div>
+        )}
+      </div>
 
-          {remainingCount > 0 && (
-            <div className="bg-dark py-2 px-4 rounded-full shadow-5xl">
-              <h3 className="text-white text-sm capitalize">
-                +{remainingCount} more
-              </h3>
-            </div>
-          )}
-        </div>
-
-        {/* ==================== Project Content ========================= */}
-        <div className="mt-5">
-          <h2 className="text-3xl font-dm-serif text-textSecondary mb-4 overflow-hidden truncate">
-            {title}
-          </h2>
-          <p className="text-base text-textPrimary line-clamp-3">
-            {description}
+      <div className="p-6 space-y-4">
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
+            {project.title}
+          </h3>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {project.description}
           </p>
         </div>
 
-        {/* ========================= Project BTN ====================== */}
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2">
+          {project.techs.map((tech) => (
+            <Badge key={tech.id} variant="secondary" className="text-xs">
+              {tech.name}
+            </Badge>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className="flex space-x-3 pt-2">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="hover:text-primary transition-colors duration-300"
+            asChild
+          >
+            <Link
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLink className="h-4 w-4 mr-2" />
+              Live Demo
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="hover:text-primary transition-colors duration-300"
+            asChild
+          >
+            <Link
+              href={project.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="h-4 w-4 mr-2" />
+              Source
+            </Link>
+          </Button>
+        </div>
       </div>
-    </motion.div>
+    </Card>
   );
 };
 

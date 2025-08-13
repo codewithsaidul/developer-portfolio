@@ -1,6 +1,6 @@
 export type { Theme, ThemeProviderProps } from "./theme.types";
 export type { SocialsIcon, SocialIconProps } from "./social.types";
-export type { Project, ProjectCardProps, ProjectModelProps, ProjectTech } from "./project.types";
+export type { IProject, IProjectCardProps, IProjectTech } from "./project.types";
 export type { SectionHeadingProps } from "./heading.types";
 export type { DetailsProps } from "./education.types";
 

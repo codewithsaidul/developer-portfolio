@@ -1,17 +1,11 @@
 "use client";
-import profilePhoto from "@/assets/images/profile-photo.jpg";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { technologies, highlights } from "@/constants/constants";
+import AboutHighlight from "@/components/About/AboutHighlight";
+import AboutInfo from "@/components/About/AboutInfo";
+import { highlights } from "@/constants/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import { useRef } from "react";
-
-
-
-
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -21,7 +15,7 @@ if (typeof window !== "undefined") {
 export default function About() {
   const headingRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const aboutInfoRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const cardTitleRef = useRef<HTMLHeadingElement>(null);
 
@@ -52,7 +46,7 @@ export default function About() {
 
         // Content animation
         gsap.fromTo(
-          contentRef.current,
+          aboutInfoRef.current,
           { opacity: 0, y: 30 },
           {
             opacity: 1,
@@ -60,7 +54,7 @@ export default function About() {
             duration: 1.5,
             ease: "ease",
             scrollTrigger: {
-              trigger: contentRef.current,
+              trigger: aboutInfoRef.current,
               start: "top 70%",
               end: "bottom 20%",
               toggleActions: "play none none reverse",
@@ -77,7 +71,7 @@ export default function About() {
             duration: 2,
             ease: "ease",
             scrollTrigger: {
-              trigger: contentRef.current,
+              trigger: cardTitleRef.current,
               start: "top 70%",
               end: "bottom 20%",
               toggleActions: "play none none reverse",
@@ -134,56 +128,7 @@ export default function About() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Photo & Story */}
-            <div ref={contentRef} className="space-y-6">
-              {/* Profile Photo */}
-              <div className="flex justify-center lg:justify-start">
-                <div className="relative">
-                  <Image
-                    src={profilePhoto}
-                    alt="Saidul Islam Rana"
-                    className="w-64 h-64 rounded-2xl object-cover shadow-xl hover-lift"
-                  />
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-10" />
-                </div>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-2xl font-semibold">My Journey</h3>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    With over 5 years of experience in frontend development,
-                    I&apos;ve had the privilege of working with diverse teams
-                    and technologies to create exceptional digital experiences.
-                  </p>
-                  <p>
-                    My passion lies in transforming complex problems into
-                    simple, beautiful, and intuitive solutions. I believe that
-                    great software is not just about functionality, but about
-                    creating delightful experiences that users love.
-                  </p>
-                  <p>
-                    When I&apos;m not coding, you&apos;ll find me exploring new
-                    technologies, contributing to open-source projects, or
-                    mentoring aspiring developers in the community.
-                  </p>
-                </div>
-              </div>
-
-              {/* Technologies */}
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold">Technologies I Love</h4>
-                <div className="flex flex-wrap gap-2">
-                  {technologies.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="hover:bg-primary hover:text-primary-foreground transition-colors duration-300 cursor-default"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <AboutInfo aboutInfoRef={aboutInfoRef} />
 
             {/* Right Column - Highlights */}
             <div className="space-y-6">
@@ -192,22 +137,7 @@ export default function About() {
               </h3>
               <div ref={cardsRef} className="grid gap-6">
                 {highlights.map((item) => (
-                  <Card
-                    key={item.title}
-                    className="p-6 hover-lift border border-border/50 group"
-                  >
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 rounded-xl bg-primary duration-700 group-hover:bg-secondary group-hover:duration-700">
-                        <item.icon className="h-6 w-6 text-primary-foreground duration-1000 group-hover:text-primary group-hover:duration-1000" />
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="text-lg font-semibold">{item.title}</h4>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
+                  <AboutHighlight key={item.title} item={item} />
                 ))}
               </div>
             </div>

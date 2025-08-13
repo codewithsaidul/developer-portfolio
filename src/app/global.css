@@ -182,7 +182,7 @@
   }
 
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-background text-foreground;
     /* Enhanced theme transitions */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -367,6 +367,8 @@
     );
   }
 
+
+
   .gradient-bg-animated {
     background: linear-gradient(
       135deg,
@@ -507,9 +509,6 @@
     @apply transition-all! duration-300! hover:-translate-y-1! hover:shadow-lg!;
   }
 
-  .gradient-surface {
-    background-image: var(--gradient-accent);
-  }
   /* .hover-glow {
     @apply transition-all duration-300 hover:shadow-glow;
   } */

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
@@ -222,14 +222,10 @@ export default function Hero() {
             >
               <Button
                 size="lg"
-                className="rounded-2xl px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                onClick={() =>
-                  document
-                    .getElementById("projects")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                className="rounded-2xl px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-1"
               >
-                View My Work
+                <span><Download size={24} /></span>
+                <Link href="/frontend-developer-resume-of-saidul.pdf" download>Download Resume</Link>
               </Button>
               <Button
                 variant="outline"
