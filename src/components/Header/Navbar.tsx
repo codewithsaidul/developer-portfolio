@@ -32,8 +32,8 @@ export default function Header() {
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm"
-          : "bg-background/80 backdrop-blur-md border-b border-border/20"
-      }`}
+          : "bg-transparent border-b border-border/20"
+      } ${isMenuOpen && "backdrop-blur-md"}`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">

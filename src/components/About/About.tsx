@@ -57,7 +57,7 @@ export default function About() {
           {
             opacity: 1,
             y: 0,
-            duration: 2,
+            duration: 1.5,
             ease: "ease",
             scrollTrigger: {
               trigger: contentRef.current,
@@ -74,7 +74,7 @@ export default function About() {
           {
             opacity: 1,
             y: 0,
-            duration: 2.7,
+            duration: 2,
             ease: "ease",
             scrollTrigger: {
               trigger: contentRef.current,
@@ -95,13 +95,13 @@ export default function About() {
               opacity: 1,
               y: 0,
               scale: 1,
-              duration: 2.6,
+              duration: 0.8,
               ease: "power3.out",
-              stagger: 0.5,
+              stagger: 0.1,
               scrollTrigger: {
                 trigger: cardsRef.current,
-                start: "top 70%",
-                end: "bottom 10%",
+                start: "top 80%",
+                end: "bottom 40%",
                 toggleActions: "play none none reverse",
               },
             }
@@ -119,7 +119,7 @@ export default function About() {
       id="about"
       className="section-padding bg-muted/30"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="space-y-16">
           {/* Header */}
           <div ref={headingRef} className="text-center space-y-4">
@@ -198,7 +198,7 @@ export default function About() {
                   >
                     <div className="flex items-start space-x-4">
                       <div className="p-3 rounded-xl bg-primary duration-700 group-hover:bg-secondary group-hover:duration-700">
-                        <item.icon className="h-6 w-6 text-primary-foreground" />
+                        <item.icon className="h-6 w-6 text-primary-foreground duration-1000 group-hover:text-primary group-hover:duration-1000" />
                       </div>
                       <div className="space-y-2">
                         <h4 className="text-lg font-semibold">{item.title}</h4>
