@@ -1,4 +1,4 @@
-import { Code, Lightbulb, Server, Users, Zap } from "lucide-react";
+import { Code, Globe, Layers, Lightbulb, Server, Smartphone, Users, Zap, ZapIcon } from "lucide-react";
 import { BiLogoFirebase } from "react-icons/bi";
 import { GiMagicLamp } from "react-icons/gi";
 import { GrMysql } from "react-icons/gr";
