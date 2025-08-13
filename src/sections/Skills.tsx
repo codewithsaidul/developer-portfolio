@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { skillCategories } from "../constants/constants";
+import EngineeringPillars from "@/components/Skills/EngineeringPillars";
+import ProfessionalDevelopment from "@/components/Skills/ProfessionalDevelopment";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -15,6 +17,9 @@ const Skills = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const categoriesRef = useRef<HTMLDivElement>(null);
+  const addiHeadingRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const learningRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
@@ -84,6 +89,63 @@ const Skills = () => {
             });
           });
         });
+
+        gsap.fromTo(
+          addiHeadingRef.current,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: addiHeadingRef.current,
+              start: "top 100%",
+              end: "bottom 10%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+
+        // Cards stagger animation
+        const cards = cardsRef.current?.children;
+        if (cards) {
+          gsap.fromTo(
+            cards,
+            { opacity: 0, y: 40, scale: 0.9 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.8,
+              ease: "power3.out",
+              stagger: 0.1,
+              scrollTrigger: {
+                trigger: cardsRef.current,
+                start: "top 100%",
+                end: "bottom 10%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        }
+
+        gsap.fromTo(
+          learningRef.current,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: learningRef.current,
+              start: "top 100%",
+              end: "bottom 10%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
       }
     }, sectionRef);
 
@@ -142,6 +204,16 @@ const Skills = () => {
             </Card>
           ))}
         </div>
+      </div>
+
+      {/* =========================== additional skils ================== */}
+      <div className="relative container mx-auto px-4 mt-40">
+        <EngineeringPillars headingRef={addiHeadingRef} cardsRef={cardsRef} />
+      </div>
+
+      {/* =========================== certified & continues learing ================== */}
+      <div ref={learningRef} className="relative container mx-auto px-4 mt-40">
+        <ProfessionalDevelopment />
       </div>
     </section>
   );
