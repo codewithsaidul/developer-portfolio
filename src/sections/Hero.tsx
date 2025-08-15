@@ -8,6 +8,10 @@ import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
+
+
+
+
 // Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
