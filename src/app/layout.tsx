@@ -65,14 +65,6 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  linkedin: {
-    card: "summary_large_image",
-    title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
-    description:
-      "JavaScript web developer specializing in frontend with React & backend with Node.js. Explore my latest projects and skills.",
-    creator: "@codewithsaidul",
-    images: ["https://codewithsaidul.vercel.app/og-image.jpg"],
-  },
   twitter: {
     card: "summary_large_image",
     title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
