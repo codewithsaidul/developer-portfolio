@@ -134,7 +134,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-center text-muted-foreground">
-            <p className="flex items-center justify-center space-x-1 text-sm">
+            <p className="flex flex-wrap items-center justify-center space-x-1 text-sm">
               <span>© {currentYear} Saidul Islam Rana. Made with</span>
               <Heart className="h-4 w-4 text-red-500 fill-current animate-pulse" />
               <span>and lots of coffee.</span>
