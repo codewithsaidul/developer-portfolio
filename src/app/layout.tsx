@@ -1,15 +1,12 @@
-import Navbar from "@/components/Header/Navbar";
-import type { Metadata } from "next";
-import { DM_Serif_Display, Inter } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
-import  { Toaster } from 'react-hot-toast';
-import "./global.css"
-import { ThemeProvider } from "@/Provider/ThemeProvider";
+import Navbar from "@/components/Header/Navbar";
 import AnimationProvider from "@/Provider/AnimationProvider";
 import SmoothScroll from "@/Provider/SmoothScrollProvider";
-
-
-
+import type { Metadata } from "next";
+import { DM_Serif_Display, Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+import "./global.css";
+import { ThemeProvider } from "@/Provider/ThemeProvider";
 
 const getInter = Inter({
   variable: "--font-intar",
@@ -46,7 +43,9 @@ export const metadata: Metadata = {
     "CodeWithSaidul",
     "Saidul Islam Rana",
   ],
-  authors: [{ name: "Saidul Islam Rana", url: "https://codewithsaidul.vercel.app" }],
+  authors: [
+    { name: "Saidul Islam Rana", url: "https://codewithsaidul.vercel.app" },
+  ],
   creator: "CodeWithSaidul",
   openGraph: {
     title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
@@ -81,9 +80,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-      <body className={`${getInter.variable} ${dmSerif.variable} relative antialiased`}>
-        <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${getInter.variable} ${dmSerif.variable} relative antialiased`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <AnimationProvider>
             <SmoothScroll>
               <Navbar />

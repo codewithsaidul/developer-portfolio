@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sun, Moon } from "lucide-react";
-import { useTheme } from "@/hooks/useTheme";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Header() {
-  const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -39,7 +38,10 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-lg sm:text-xl lg:text-2xl font-serif font-bold hover:text-primary transition-colors duration-200 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent cursor-pointer">
+            <Link
+              href="/"
+              className="text-lg sm:text-xl lg:text-2xl font-serif font-bold hover:text-primary transition-colors duration-200 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent cursor-pointer"
+            >
               CodeWithSaidul
             </Link>
           </div>
@@ -60,26 +62,23 @@ export default function Header() {
 
           {/* Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <Button variant="outline" size="lg" className="max-[420px]:hidden hover:bg-primary! duration-700! hover:duration-700! py-1! px-6!">
-              <Link href="https://github.com/codewithsaidul"
-              target="_blank"
-              rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              size="lg"
+              className="max-[420px]:hidden hover:bg-primary! duration-700! hover:duration-700! py-1! px-6!"
+            >
+              <Link
+                href="https://github.com/codewithsaidul"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Github Profile
               </Link>
             </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="focus-ring"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )}
-            </Button>
+            <div>
+              {" "}
+              <ThemeToggle />
+            </div>
 
             {/* Mobile Menu Button */}
             <Button
