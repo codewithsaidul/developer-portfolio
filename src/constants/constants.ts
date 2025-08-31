@@ -44,9 +44,6 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
-
-
-
 export const categories = [
   "All Projects",
   "Full-Stack",
@@ -54,14 +51,38 @@ export const categories = [
   "E-commerce",
   "AI Platform",
   "Dashboard",
-  "Web3"
+  "Web3",
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "AI Mock InterView Platform",
+    title: "Rydex - Intelligent Ride Booking Platform",
     thumbnail: "/projects/project1.webp",
+    codeLink: "https://github.com/codewithsaidul/ph-assignmen-six",
+    liveLink: "https://rydex.vercel.app",
+    description:
+      "Rydex is a full-stack, role-based ride-booking platform engineered for a seamless and secure transportation experience for Riders, Drivers, and Administrators. It features interactive map-based booking with real-time fare estimation, live status notifications via WebSockets, and comprehensive dashboards for managing rides and users, creating a complete, production-grade application.",
+    categories: ["Full-Stack", "Real-time Application", "Geolocation"],
+    techs: [
+      { id: 1, name: "React" },
+      { id: 2, name: "Node.js" },
+      { id: 3, name: "TypeScript" },
+      { id: 4, name: "Redux Toolkit" },
+      { id: 5, name: "Express.JS" },
+      { id: 6, name: "Mongoose" },
+      { id: 7, name: "MongoDB" },
+      { id: 8, name: "Socket.IO" },
+      { id: 9, name: "ZOD" },
+      { id: 10, name: "Shadcn ui" },
+      { id: 11, name: "Tailwind CSS" },
+      { id: 12, name: "Leaflet.js" },
+    ],
+  },
+  {
+    id: 2,
+    title: "AI Mock InterView Platform",
+    thumbnail: "/projects/project2.webp",
     codeLink: "https://github.com/codewithsaidul/cws_mock_interview_platform",
     liveLink: "https://prepwise-sigma.vercel.app/",
     description:
@@ -76,27 +97,6 @@ export const projects = [
       { id: 6, name: "firebase" },
       { id: 7, name: "react hook form" },
       { id: 8, name: "vapi" },
-    ],
-  },
-
-  {
-    id: 2,
-    title: "GizmoMart - E-Commerce Website",
-    thumbnail: "/projects/project2.webp",
-    codeLink: "https://github.com/codewithsaidul/GizmoMart-Client",
-    liveLink: "https://gizmo-mart-client.vercel.app",
-    description:
-      "Gizmo Mart is a user-centric e-commerce platform designed for smooth and efficient gadget shopping. It offers intuitive product Browse, secure checkout, and order tracking to enhance the online shopping experience for both users and store admins. The platform allows users to easily search, compare, and purchase gadgets from a wide range of categories.",
-    categories: ["Full-Stack", "E-commerce", "Dashboard"],
-    techs: [
-      { id: 1, name: "react" },
-      { id: 2, name: "TailwindCSS" },
-      { id: 3, name: "node JS" },
-      { id: 4, name: "swiper JS" },
-      { id: 5, name: "mongoDB" },
-      { id: 6, name: "firebase" },
-      { id: 7, name: "express JS" },
-      { id: 8, name: "tanstack query" },
     ],
   },
   {
