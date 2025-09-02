@@ -7,6 +7,7 @@ import { DM_Serif_Display, Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./global.css";
 import { ThemeProvider } from "@/Provider/ThemeProvider";
+import TechCursor from "../../components/nurui/tech-cursor";
 
 const getInter = Inter({
   variable: "--font-intar",
@@ -96,6 +97,7 @@ export default function RootLayout({
               {children}
               <Footer />
               <Toaster position="top-center" />
+              <TechCursor />
             </SmoothScroll>
           </AnimationProvider>
         </ThemeProvider>
