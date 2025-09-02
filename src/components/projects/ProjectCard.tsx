@@ -7,11 +7,10 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 
-const ProjectCard = ({ project}: IProjectCardProps) => {
+const ProjectCard = ({ project }: IProjectCardProps) => {
   const isFullStack = project.categories.some(
     (category) => category === "Full-Stack"
   );
-
 
   return (
     <Card className="group overflow-hidden pt-0 hover-lift border border-border/50">
@@ -76,14 +75,31 @@ const ProjectCard = ({ project}: IProjectCardProps) => {
             asChild
           >
             <Link
-              href={project.codeLink}
+              href={project.clientLink}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Github className="h-4 w-4 mr-2" />
-              Source
+              Client Source
             </Link>
           </Button>
+          {project.serverLink && (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hover:text-primary transition-colors duration-300"
+              asChild
+            >
+              <Link
+                href={project.serverLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-4 w-4 mr-2" />
+                Server Source
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
     </Card>

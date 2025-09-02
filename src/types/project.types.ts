@@ -7,7 +7,8 @@ export interface IProject {
   id: number;
   title: string;
   thumbnail: string;
-  codeLink: string;
+  clientLink: string;
+  serverLink: string | null;
   liveLink: string;
   description: string;
   techs: IProjectTech[];

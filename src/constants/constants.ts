@@ -1,3 +1,4 @@
+import { IProject } from "@/types";
 import {
   Code,
   Globe,
@@ -54,12 +55,13 @@ export const categories = [
   "Web3",
 ];
 
-export const projects = [
+export const projects: IProject[] = [
   {
     id: 1,
     title: "Rydex - Intelligent Ride Booking Platform",
     thumbnail: "/projects/project1.webp",
-    codeLink: "https://github.com/codewithsaidul/ph-assignmen-six",
+    clientLink: "https://github.com/codewithsaidul/ph-assignmen-six",
+    serverLink: "https://github.com/codewithsaidul/ph-assignmen-six",
     liveLink: "https://rydex.vercel.app",
     description:
       "Rydex is a full-stack, role-based ride-booking platform engineered for a seamless and secure transportation experience for Riders, Drivers, and Administrators. It features interactive map-based booking with real-time fare estimation, live status notifications via WebSockets, and comprehensive dashboards for managing rides and users, creating a complete, production-grade application.",
@@ -83,7 +85,8 @@ export const projects = [
     id: 2,
     title: "AI Mock InterView Platform",
     thumbnail: "/projects/project2.webp",
-    codeLink: "https://github.com/codewithsaidul/cws_mock_interview_platform",
+    clientLink: "https://github.com/codewithsaidul/cws_mock_interview_platform",
+    serverLink: null,
     liveLink: "https://prepwise-sigma.vercel.app/",
     description:
       "PrepWise is an innovative platform that helps users prepare for interviews by offering mock interview sessions with personalized questions. The website provides users with the ability to generate interview questions based on their preferences, take mock interviews, and receive feedback, all through voice calls. Whether preparing for coding, behavioral, or system design interviews, PrepWise tailors each session to meet the specific needs of the user.",
@@ -103,7 +106,8 @@ export const projects = [
     id: 3,
     title: "Naxos NFT Website",
     thumbnail: "/projects/project3.webp",
-    codeLink: "https://github.com/codewithsaidul/Naxos-NFT",
+    clientLink: "https://github.com/codewithsaidul/Naxos-NFT",
+    serverLink: null,
     liveLink: "https://naxos-nft.vercel.app",
     description:
       "Naxos NFT is a digital marketplace built to simplify NFT discovery, trading, and collection. It offers a sleek user experience for Browse, minting, and managing NFTs, empowering creators and collectors in the growing world of digital assets. The platform makes it easy for users to discover unique digital art and collectibles, while creators can effortlessly mint and showcase their work.",
@@ -120,7 +124,8 @@ export const projects = [
     id: 4,
     title: "Animate-X Movie Web Series Anime",
     thumbnail: "/projects/project4.webp",
-    codeLink: "https://github.com/codewithsaidul/AnimateX",
+    clientLink: "https://github.com/codewithsaidul/AnimateX",
+    serverLink: null,
     liveLink: "https://animate-x.vercel.app",
     description:
       "Animate-X is a creative animation platform designed to make motion design simple and accessible. It allows users to create, customize, and preview web animations in real time, streamlining the workflow for developers and designers alike. By offering an intuitive interface, Animate-X helps users bring their design ideas to life with ease, whether for websites, mobile apps, or other digital platforms. The platform provides a wide range of customizable animation templates and tools that make the animation process faster and more efficient.",
