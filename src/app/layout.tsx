@@ -23,7 +23,7 @@ const dmSerif = DM_Serif_Display({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
+  title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB, Mongoose | CodeWithSaidul",
   icons: {
     icon: "/og-image.jpg",
   },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   ],
   creator: "CodeWithSaidul",
   openGraph: {
-    title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
+    title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB, Mongoose | CodeWithSaidul",
     description:
       "Experienced JavaScript web developer focusing on React, Next.js, Tailwind, Node.js & MongoDB. Passionate about building responsive, high-performance web apps.",
     url: "https://codewithsaidul.vercel.app",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB",
+    title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB, Mongoose | CodeWithSaidul",
     description:
       "JavaScript web developer specializing in frontend with React & backend with Node.js. Explore my latest projects and skills.",
     creator: "@codewithsaidul",
