@@ -52,7 +52,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
         </div>
 
         {/* Links */}
-        <div className="flex space-x-3 pt-2">
+        <div className="flex flex-wrap space-x-3 pt-2">
           <Button
             variant="ghost"
             size="sm"
