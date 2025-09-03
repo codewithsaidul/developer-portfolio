@@ -13,16 +13,15 @@ export default function AboutInfo({
     <div ref={aboutInfoRef} className="space-y-6">
       {/* Profile Photo */}
       <div className="flex justify-center lg:justify-start">
-        <div className="relative">
+        <figure className="relative w-64 min-h-60 aspect-square">
           <Image
             src="/og-image.jpg"
             alt="Saidul Islam Rana"
-            width={600}
-            height={600}
-            className="w-64 h-64 rounded-2xl object-cover shadow-xl hover-lift"
+            fill
+            className="rounded-2xl object-cover shadow-xl hover-lift"
           />
           <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-10" />
-        </div>
+        </figure>
       </div>
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold">My Journey</h3>

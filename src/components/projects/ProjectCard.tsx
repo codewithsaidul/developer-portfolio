@@ -14,13 +14,12 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
 
   return (
     <Card className="group overflow-hidden pt-0 hover-lift border border-border/50">
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden w-full min-h-[300px]">
         <Image
           src={project.thumbnail}
           alt={project.title}
-          width={600}
-          height={600}
-          className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+          fill
+          className="object-cover aspect-square transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
