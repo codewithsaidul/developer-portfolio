@@ -23,12 +23,12 @@ const dmSerif = DM_Serif_Display({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB, Mongoose | CodeWithSaidul",
+  title: "Full-Stack JavaScript Developer (MERN Stack) | CodeWithSaidul",
   icons: {
     icon: "/og-image.jpg",
   },
   description:
-    "I'm a JavaScript-based web developer skilled in React, Next.js, Tailwind CSS, and backend tools like Node.js and MongoDB. I also have a solid understanding of programming fundamentals like variables, conditions, loops, arrays, and functions.",
+    "A passionate Full-Stack Developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). Proficient in building responsive and modern web applications using Next.js and Tailwind CSS. Eager to contribute my skills and grow in a dynamic development role.",
   keywords: [
     "JavaScript developer",
     "React developer",
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     "Web developer",
     "Node.js",
     "MongoDB",
+    "TypeScript",
     "MERN stack developer",
     "Frontend developer",
     "Tailwind CSS",
@@ -49,9 +50,9 @@ export const metadata: Metadata = {
   ],
   creator: "CodeWithSaidul",
   openGraph: {
-    title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB, Mongoose | CodeWithSaidul",
+    title: "Full-Stack JavaScript Developer (MERN Stack) | CodeWithSaidul",
     description:
-      "Experienced JavaScript web developer focusing on React, Next.js, Tailwind, Node.js & MongoDB. Passionate about building responsive, high-performance web apps.",
+      "A passionate Full-Stack Developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). Proficient in building responsive and modern web applications using Next.js and Tailwind CSS. Eager to contribute my skills and grow in a dynamic development role.",
     url: "https://codewithsaidul.vercel.app",
     siteName: "CodeWithSaidul Portfolio",
     images: [
@@ -67,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JavaScript Web Developer | React, Next.js, Node.js, MongoDB, Mongoose | CodeWithSaidul",
+    title: "Full-Stack JavaScript Developer (MERN Stack) | CodeWithSaidul",
     description:
-      "JavaScript web developer specializing in frontend with React & backend with Node.js. Explore my latest projects and skills.",
+      "A passionate Full-Stack Developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). Proficient in building responsive and modern web applications using Next.js and Tailwind CSS. Eager to contribute my skills and grow in a dynamic development role.",
     creator: "@codewithsaidul",
     images: ["https://codewithsaidul.vercel.app/og-image.jpg"],
   },

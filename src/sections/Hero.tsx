@@ -9,9 +9,6 @@ import Link from "next/link";
 import { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
-
-
-
 // Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -19,8 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
-  const titleRef1 = useRef<HTMLHeadingElement>(null);
-  const titleRef2 = useRef<HTMLHeadingElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const titleRef3 = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -43,15 +39,10 @@ export default function Hero() {
         const tl = gsap.timeline();
 
         tl.fromTo(
-          titleRef1.current,
-          { opacity: 0, y: 60 },
-          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
-        )
-          .fromTo(
-            titleRef2.current,
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            "-=0.5"
+            titleRef.current,
+            { opacity: 0, y: 70 },
+            { opacity: 1, y: 0, duration: 2, ease: "power1.in" },
+            "-=0.7"
           )
           .fromTo(
             titleRef3.current,
@@ -176,20 +167,19 @@ export default function Hero() {
           <div className="max-w-4xl mx-auto">
             {/* Main Title */}
             <div>
-              <span
-                ref={titleRef1}
-                className="text-xl font-serif font-bold text-foreground mb-6 leading-tight"
-              >
-                Hi, I&apos;m{" "}
-              </span>
               <h1
-                ref={titleRef2}
+                ref={titleRef}
                 className="text-4xl sm:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
               >
+                <span
+                  className="text-xl font-serif block font-bold text-foreground mb-6 leading-tight"
+                >
+                  Hi, I&apos;m{" "}
+                </span>
                 Saidul Islam Rana
               </h1>
 
-              <h2
+              <p
                 ref={titleRef3}
                 className="text-muted-foreground text-xl min-[415px]:text-3xl md:text-4xl my-3"
               >
@@ -210,7 +200,7 @@ export default function Hero() {
                     delaySpeed={1500}
                   />
                 </span>
-              </h2>
+              </p>
             </div>
 
             {/* Description */}

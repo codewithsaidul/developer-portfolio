@@ -181,9 +181,9 @@ const Skills = () => {
               key={category.title}
               className="border min-h-[400px] border-primary/30 rounded-xl shadow-2xl"
             >
-              <h2 className="text-4xl text-textSecondary font-dm-serif text-center">
+              <h3 className="text-4xl text-textSecondary font-dm-serif text-center">
                 {category.title}
-              </h2>
+              </h3>
               <CardContent className="mt-5 flex flex-row flex-wrap items-center justify-center gap-0.5 sm:gap-2">
                 {category.skills.map((tech) => (
                   <div

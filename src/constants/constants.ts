@@ -309,7 +309,7 @@ export const engineeringPillars = [
   },
   {
     icon: ZapIcon,
-    name: "Performance",
+    name: "Web Performance",
     des: "Optimizing code for speed, scalability, and efficiency.",
     color: "text-sky-500",
   },
