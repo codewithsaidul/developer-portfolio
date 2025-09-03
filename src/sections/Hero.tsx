@@ -208,8 +208,7 @@ export default function Hero() {
               ref={descRef}
               className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 font-light leading-relaxed"
             >
-              Frontend Developer crafting beautiful, functional web experiences
-              with modern technologies
+              I&apos;m a JavaScript & **TypeScript** developer focused on building beautiful, functional, and high-performance web experiences. From responsive frontends with React & Next.js to robust, type-safe backends with Node.js, I love creating solutions that solve real-world problems.
             </p>
 
             {/* CTA Buttons */}
