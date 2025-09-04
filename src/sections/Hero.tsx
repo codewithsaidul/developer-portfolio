@@ -40,9 +40,9 @@ export default function Hero() {
 
         tl.fromTo(
             titleRef.current,
-            { opacity: 0, y: 70 },
+            { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 2, ease: "power1.in" },
-            "-=0.7"
+            "-=0.5"
           )
           .fromTo(
             titleRef3.current,
