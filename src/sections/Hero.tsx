@@ -127,7 +127,7 @@ export default function Hero() {
   };
 
   return (
-    <section ref={heroRef} className="relative min-h-screen">
+    <section ref={heroRef} className="relative min-h-screen pt-20">
       {/* Clean Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-primary-muted/30 to-accent-muted/20" />
       <div

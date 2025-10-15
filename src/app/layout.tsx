@@ -2,12 +2,13 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Header/Navbar";
 import AnimationProvider from "@/Provider/AnimationProvider";
 import SmoothScroll from "@/Provider/SmoothScrollProvider";
+import { ThemeProvider } from "@/Provider/ThemeProvider";
 import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
-import "./global.css";
-import { ThemeProvider } from "@/Provider/ThemeProvider";
 import TechCursor from "../../components/nurui/tech-cursor";
+import "./global.css";
+import LoadingAnimationWrapper from "@/wrapper/LoadingAnimationWrapper";
 
 const getInter = Inter({
   variable: "--font-intar",
@@ -94,11 +95,13 @@ export default function RootLayout({
         >
           <AnimationProvider>
             <SmoothScroll>
-              <Navbar />
-              {children}
-              <Footer />
-              <Toaster position="top-center" />
-              <TechCursor />
+              <LoadingAnimationWrapper>
+                <Navbar />
+                {children}
+                <Footer />
+                <Toaster position="top-center" />
+                <TechCursor />
+              </LoadingAnimationWrapper>
             </SmoothScroll>
           </AnimationProvider>
         </ThemeProvider>
