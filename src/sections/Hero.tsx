@@ -218,12 +218,14 @@ export default function Hero() {
             >
               <Button
                 size="lg"
+                variant="outline"
                 className="rounded-2xl px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 asChild
               >
                 <Link
-                  href="/frontend-developer-resume-of-saidul.pdf"
+                  href="https://res.cloudinary.com/dnrqe9nvc/image/upload/v1755246762/frontend-developer-resume-of-saidul_a1cjzm.pdf"
                   download
+                  target="_blank"
                   className="flex items-center gap-1"
                 >
                   <span>
