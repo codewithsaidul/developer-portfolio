@@ -167,7 +167,7 @@ export default function Hero() {
           <div className="max-w-4xl mx-auto">
             {/* Main Title */}
             <div>
-              <h1
+              <h2
                 ref={titleRef}
                 className="text-4xl sm:text-6xl lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
               >
@@ -177,7 +177,7 @@ export default function Hero() {
                   Hi, I&apos;m{" "}
                 </span>
                 Saidul Islam Rana
-              </h1>
+              </h2>
 
               <p
                 ref={titleRef3}

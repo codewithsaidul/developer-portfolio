@@ -28,12 +28,12 @@ const dmSerif = DM_Serif_Display({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: "Full-Stack JavaScript Developer (MERN Stack) | CodeWithSaidul",
+  title: "MERN Stack & Next.js Developer | CodeWithSaidul",
   icons: {
     icon: "/og-image.jpg",
   },
   description:
-    "A passionate Full-Stack Developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). Proficient in building responsive and modern web applications using Next.js and Tailwind CSS. Eager to contribute my skills and grow in a dynamic development role.",
+    "Full-Stack MERN Stack Developer building responsive web applications with Next.js & Tailwind CSS. Eager to contribute my skills. View my portfolio.",
   keywords: [
     "JavaScript developer",
     "React developer",

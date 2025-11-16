@@ -7,6 +7,9 @@ import Skills from "@/sections/Skills";
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
+      <h1 className="sr-only">
+        Saidul Islam Rana - MERN Stack & Next.js Developer
+      </h1>
       <Hero />
       <About />
       <Skills />
