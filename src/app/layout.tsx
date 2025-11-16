@@ -79,7 +79,11 @@ export const metadata: Metadata = {
     creator: "@codewithsaidul",
     images: ["https://codewithsaidul.vercel.app/og-image.jpg"],
   },
+  verification: {
+    google: "JHNtCukuwx2jgIKQeUOapUbqCamQkkWj5-7fUjWckbw"
+  }
 };
+
 
 export default function RootLayout({
   children,
