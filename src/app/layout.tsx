@@ -1,14 +1,18 @@
 import Footer from "@/components/Footer/Footer";
+import GoogleAnalytics from "@/components/GooleAnalytics/GoogleAnalytics";
 import Navbar from "@/components/Header/Navbar";
+import { getPortfolioSchema } from "@/lib/getPortfolioSchema";
+import AnalyticsProvider from "@/Provider/AnalyaticProvider";
 import AnimationProvider from "@/Provider/AnimationProvider";
 import SmoothScroll from "@/Provider/SmoothScrollProvider";
 import { ThemeProvider } from "@/Provider/ThemeProvider";
+import LoadingAnimationWrapper from "@/wrapper/LoadingAnimationWrapper";
 import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
+import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import TechCursor from "../../components/nurui/tech-cursor";
 import "./global.css";
-import LoadingAnimationWrapper from "@/wrapper/LoadingAnimationWrapper";
 
 const getInter = Inter({
   variable: "--font-intar",
@@ -82,8 +86,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = getPortfolioSchema();
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <GoogleAnalytics trackingId="G-G3MPRDKP75" />
+        {/* AnalyticsProvider to track route changes */}
+        <Suspense fallback={null}>
+          <AnalyticsProvider trackingId="G-G3MPRDKP75" />
+        </Suspense>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd }}
+        />
+      </head>
       <body
         className={`${getInter.variable} ${dmSerif.variable} relative antialiased`}
       >

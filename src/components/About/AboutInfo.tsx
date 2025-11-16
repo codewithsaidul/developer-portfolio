@@ -1,8 +1,9 @@
+"use client"
 import { technologies } from "@/constants/constants";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { RefObject } from "react";
-// import profilePhoto from "@/assets/images/profile-photo.jpg";
+
 
 export default function AboutInfo({
   aboutInfoRef,

@@ -1,8 +1,9 @@
+"use client"
 import { Card } from "../ui/card";
 import { IconType } from "react-icons";
 
 type AboutHighlightItem = {
-  icon: IconType; // react-icons এর জন্য
+  icon: IconType; 
   title: string;
   description: string;
 };

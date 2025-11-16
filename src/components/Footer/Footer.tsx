@@ -1,9 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ArrowUp, Github, Heart, Linkedin, Mail } from "lucide-react";
+import { ArrowUp, Github, Linkedin, Mail, Heart } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 
@@ -11,46 +9,15 @@ export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
   const currentYear = new Date().getFullYear();
 
-  useGSAP(() => {
-    const ctx = gsap.context(() => {
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
-
-      if (!prefersReducedMotion) {
-        // Social links hover animations
-        const socialLinks = footerRef.current?.querySelectorAll(".social-link");
-        socialLinks?.forEach((link) => {
-          const element = link as HTMLElement;
-          element.addEventListener("mouseenter", () => {
-            gsap.to(element, {
-              scale: 1.1,
-              rotation: 5,
-              duration: 0.3,
-              ease: "power2.out",
-            });
-          });
-          element.addEventListener("mouseleave", () => {
-            gsap.to(element, {
-              scale: 1,
-              rotation: 0,
-              duration: 0.3,
-              ease: "power2.out",
-            });
-          });
-        });
-      }
-    }, footerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer ref={footerRef} className="bg-muted/30 border-t border-primary/30 mt-32 py-20">
+    <footer
+      ref={footerRef}
+      className="bg-muted/30 border-t border-primary/30 mt-32 py-20"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center space-y-8">
           {/* Back to Top Button */}
@@ -74,59 +41,52 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="flex items-center space-x-6">
-            <Link
-              href="https://github.com/codewithsaidul"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="github"
-              className="social-link p-3 rounded-2xl bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-300 shadow-lg"
-            >
-              <Github className="h-6 w-6" />
-            </Link>
-            <Link
-              href="https://linkedin.com/in/codewithsaidul"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Linkedin"
-              className="social-link p-3 rounded-2xl bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-300 shadow-lg"
-            >
-              <Linkedin className="h-6 w-6" />
-            </Link>
-            <Link
-              href="mailto:codewithsaidul@gmail.com"
-              aria-label="email"
-              className="social-link p-3 rounded-2xl bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-300 shadow-lg"
-            >
-              <Mail className="h-6 w-6" />
-            </Link>
+            {[
+              {
+                href: "https://github.com/codewithsaidul",
+                icon: Github,
+                label: "github",
+              },
+              {
+                href: "https://linkedin.com/in/codewithsaidul",
+                icon: Linkedin,
+                label: "Linkedin",
+              },
+              {
+                href: "mailto:codewithsaidul@gmail.com",
+                icon: Mail,
+                label: "email",
+              },
+            ].map(({ href, icon: Icon, label }) => (
+              <Link
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="
+                  social-link p-3 rounded-2xl bg-muted/50 
+                  hover:bg-muted text-muted-foreground hover:text-foreground 
+                  transition-all duration-300 shadow-lg 
+                  hover:scale-110 hover:rotate-6
+                "
+              >
+                <Icon className="h-6 w-6" />
+              </Link>
+            ))}
           </div>
 
           {/* Navigation Links */}
           <nav className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            <Link
-              href="#about"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-            >
-              About
-            </Link>
-            <Link
-              href="#skills"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-            >
-              Skills
-            </Link>
-            <Link
-              href="#projects"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-            >
-              Projects
-            </Link>
-            <Link
-              href="#contact"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-            >
-              Contact
-            </Link>
+            {["about", "skills", "projects", "contact"].map((section) => (
+              <Link
+                key={section}
+                href={`#${section}`}
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </Link>
+            ))}
           </nav>
 
           {/* Divider */}

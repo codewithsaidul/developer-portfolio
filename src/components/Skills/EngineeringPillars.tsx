@@ -1,3 +1,4 @@
+"use client"
 import { engineeringPillars } from "@/constants/constants";
 import { Card } from "../ui/card";
 

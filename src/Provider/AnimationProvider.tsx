@@ -1,58 +1,75 @@
-"use client"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
 
-import type React from "react"
-
-import { useEffect } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useEffect } from "react";
 
 interface AnimationProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function AnimationProvider({ children }: AnimationProviderProps) {
   useEffect(() => {
-    // Register GSAP plugins
-    gsap.registerPlugin(ScrollTrigger)
+    let gsap: any;
+    let ScrollTrigger: any;
 
-    // Global GSAP configuration
-    gsap.config({
-      force3D: true,
-      nullTargetWarn: false,
-    })
+    if (typeof window === "undefined") return;
 
-    // Set default ease
-    gsap.defaults({
-      ease: "power3.out",
-      duration: 0.6,
-    })
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
 
-    // Refresh ScrollTrigger on window resize
+    if (prefersReducedMotion.matches) return;
+
+    // Lazy-load GSAP
+    (async () => {
+      const gsapModule = await import("gsap");
+      const stModule = await import("gsap/ScrollTrigger");
+
+      gsap = gsapModule.gsap || gsapModule.default;
+      ScrollTrigger = stModule.ScrollTrigger;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.config({
+        force3D: true,
+        nullTargetWarn: false,
+      });
+
+      gsap.defaults({
+        ease: "power3.out",
+        duration: 0.6,
+      });
+    })();
+
+    // Debounced resize handler
+    let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
-      ScrollTrigger.refresh()
-    }
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        ScrollTrigger?.refresh();
+      }, 150);
+    };
 
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("resize", handleResize);
 
-    // Handle reduced motion preference changes
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+    // Reduced-motion change listener
     const handleMotionChange = () => {
-      if (mediaQuery.matches) {
-        // Disable all GSAP animations
-        gsap.globalTimeline.clear()
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      if (prefersReducedMotion.matches) {
+        gsap?.globalTimeline?.clear();
+        ScrollTrigger?.getAll().forEach((t: any) => t.kill());
       }
-    }
+    };
 
-    mediaQuery.addEventListener("change", handleMotionChange)
+    prefersReducedMotion.addEventListener("change", handleMotionChange);
 
-    // Cleanup function
     return () => {
-      window.removeEventListener("resize", handleResize)
-      mediaQuery.removeEventListener("change", handleMotionChange)
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-    }
-  }, [])
+      window.removeEventListener("resize", handleResize);
+      prefersReducedMotion.removeEventListener("change", handleMotionChange);
 
-  return <>{children}</>
+      ScrollTrigger?.getAll().forEach((trigger: any) => trigger.kill());
+    };
+  }, []);
+
+  return <>{children}</>;
 }
+
